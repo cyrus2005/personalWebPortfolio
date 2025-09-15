@@ -45,7 +45,15 @@ Replace the placeholder images in `assets/images/` with actual screenshots:
 3. Enter: `https://github.com/cyrus2005/personalPortfolioCyrus.git`
 4. Choose `public_html` as directory
 5. Click "Clone"
-6. The `.cpanel.yml` file will automatically deploy all files to `public_html`
+6. **Important**: Update the `.cpanel.yml` file to use your actual cPanel username:
+   - Edit the file and change `/home/cyruswilburn/public_html/` to `/home/YOURUSERNAME/public_html/`
+7. The `.cpanel.yml` file will automatically deploy all files when you push changes
+
+### Deployment Process
+After cloning the repository:
+1. **Automatic Deployment (Push)**: When you push changes to GitHub, they automatically deploy to your website
+2. **Manual Deployment**: Use the "Deploy HEAD Commit" button in cPanel Git Version Control
+3. **Update from Remote**: Use "Update from Remote" to pull latest changes from GitHub
 
 ### Method 2: File Manager Upload
 1. Download the repository as ZIP
