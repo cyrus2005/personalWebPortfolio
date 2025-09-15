@@ -1,10 +1,53 @@
 <?php
 // Include shared database configuration
-require_once '../../shared-config/database.php';
+// Try multiple possible paths for the shared config
+$config_paths = [
+    '../../shared-config/database.php',
+    '../shared-config/database.php',
+    'shared-config/database.php',
+    '/home/cyruwjtb/public_html/shared-config/database.php'
+];
+
+$config_loaded = false;
+foreach ($config_paths as $path) {
+    if (file_exists($path)) {
+        require_once $path;
+        $config_loaded = true;
+        break;
+    }
+}
+
+if (!$config_loaded) {
+    // Fallback: define database constants directly
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'cyruwjtb_main');
+    define('DB_USER', 'cyruwjtb_admin');
+    define('DB_PASS', 'Pjah6966!$');
+    
+    // Simple database connection function
+    function getDatabaseConnection($database = null) {
+        try {
+            $db_name = $database ? $database : DB_NAME;
+            $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . $db_name, DB_USER, DB_PASS);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            return $pdo;
+        } catch(PDOException $e) {
+            error_log("Database connection failed: " . $e->getMessage());
+            return false;
+        }
+    }
+}
 
 // Get database connection for this site (with error handling)
 try {
-    $pdo = getSiteDatabaseConnection('barber');
+    // Try to get site-specific database connection if function exists
+    if (function_exists('getSiteDatabaseConnection')) {
+        $pdo = getSiteDatabaseConnection('barber');
+    } else {
+        $pdo = null;
+    }
+    
     if (!$pdo) {
         // Fallback to main database
         $pdo = getDatabaseConnection();
@@ -16,7 +59,7 @@ try {
 }
 
 // If database connection fails, create database and tables
-if (!$pdo) {
+if (!$pdo && function_exists('createDatabaseIfNotExists')) {
     $pdo = createDatabaseIfNotExists();
     if ($pdo) {
         // Create tables for Barber Shop
