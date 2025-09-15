@@ -199,12 +199,16 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- Ambassadors MM - First Position -->
                 <div class="portfolio-item featured">
                     <div class="portfolio-image">
-                        <img src="assets/images/ambassadors-preview.jpg" alt="Ambassadors MM Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
+                            <i class="fas fa-motorcycle"></i>
+                            <h4>Ambassadors MM</h4>
+                            <p>Motorcycle Ministry Website</p>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="http://ambassadorsmmtx.com/" target="_blank" class="portfolio-link">
                                     <i class="fas fa-external-link-alt"></i>
-                                    <span>View Live Site</span>
+                                    <span>Go to Live Site</span>
                                 </a>
                                 <a href="#contact" class="portfolio-link">
                                     <i class="fas fa-info-circle"></i>
@@ -229,12 +233,16 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- NichePort - Auto Repair - Second Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/nicheport-preview.jpg" alt="NichePort Auto Repair Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
+                            <i class="fas fa-car"></i>
+                            <h4>NichePort</h4>
+                            <p>Auto Repair Website</p>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="nicheport2/" target="_blank" class="portfolio-link">
                                     <i class="fas fa-external-link-alt"></i>
-                                    <span>View Live Site</span>
+                                    <span>Go to Live Site</span>
                                 </a>
                             </div>
                         </div>
@@ -255,12 +263,16 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- Barber Shop - Third Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/barber-preview.jpg" alt="Blade & Fade Barbers Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
+                            <i class="fas fa-cut"></i>
+                            <h4>Blade & Fade</h4>
+                            <p>Barbershop Website</p>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="barber-shop/" target="_blank" class="portfolio-link">
                                     <i class="fas fa-external-link-alt"></i>
-                                    <span>View Live Site</span>
+                                    <span>Go to Live Site</span>
                                 </a>
                             </div>
                         </div>
@@ -280,12 +292,16 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- Small Cafe - Fourth Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/cafe-preview.jpg" alt="Brew & Bite Cafe Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
+                            <i class="fas fa-coffee"></i>
+                            <h4>Brew & Bite</h4>
+                            <p>Cafe Website</p>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="small-cafe/" target="_blank" class="portfolio-link">
                                     <i class="fas fa-external-link-alt"></i>
-                                    <span>View Live Site</span>
+                                    <span>Go to Live Site</span>
                                 </a>
                             </div>
                         </div>

@@ -171,12 +171,16 @@ p {
     padding: 0.5rem 1rem;
     border: 2px solid var(--primary-blue);
     border-radius: 0.5rem;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
 .phone-cta:hover {
     background: var(--primary-blue);
     color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 /* CTA Buttons */
@@ -612,6 +616,37 @@ p {
     position: relative;
     height: 250px;
     overflow: hidden;
+}
+
+.portfolio-preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #f8f9fa 100%);
+    color: var(--medium-gray);
+    text-align: center;
+    padding: 2rem;
+}
+
+.portfolio-preview-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.portfolio-preview-placeholder h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin: 0 0 0.5rem 0;
+}
+
+.portfolio-preview-placeholder p {
+    font-size: 1rem;
+    color: var(--medium-gray);
+    margin: 0;
 }
 
 .portfolio-image img {
