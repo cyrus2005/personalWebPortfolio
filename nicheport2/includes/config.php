@@ -2,6 +2,9 @@
 // Include shared database configuration
 require_once '../../shared-config/database.php';
 
+// Get database connection for this site
+$pdo = getSiteDatabaseConnection('nicheport');
+
 // Site configuration
 define('SITE_NAME', 'Elite Collision Repair');
 define('SITE_URL', 'https://cyruswilburn.dev/nicheport2');

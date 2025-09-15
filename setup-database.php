@@ -119,10 +119,10 @@ function isDatabaseConnected() {
         <input type="text" id="db_host" name="db_host" value="localhost" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;">
     </div>
     
-    <div style="margin: 15px 0;">
-        <label for="db_name" style="display: block; margin-bottom: 5px; font-weight: bold;">Database Name: *</label>
-        <input type="text" id="db_name" name="db_name" value="cyruwjtb_portfolio" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;">
-    </div>
+        <div style="margin: 15px 0;">
+            <label for="db_name" style="display: block; margin-bottom: 5px; font-weight: bold;">Database Name: *</label>
+            <input type="text" id="db_name" name="db_name" value="cyruwjtb_main" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;">
+        </div>
     
     <div style="margin: 15px 0;">
         <label for="db_user" style="display: block; margin-bottom: 5px; font-weight: bold;">Database Username: *</label>

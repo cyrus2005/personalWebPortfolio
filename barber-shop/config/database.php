@@ -2,8 +2,8 @@
 // Include shared database configuration
 require_once '../../shared-config/database.php';
 
-// Get database connection
-$pdo = getDatabaseConnection();
+// Get database connection for this site
+$pdo = getSiteDatabaseConnection('barber');
 
 // If database connection fails, create database and tables
 if (!$pdo) {
