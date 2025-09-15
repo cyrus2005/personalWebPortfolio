@@ -198,7 +198,15 @@ $page_keywords = "web developer, custom websites, business websites, web design,
             <div class="portfolio-grid">
                 <div class="portfolio-item featured">
                     <div class="portfolio-image">
-                        <img src="assets/images/nicheport-preview.jpg" alt="NichePort - Auto Repair Website">
+                        <div class="website-preview-frame">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-url">nicheport2/</div>
+                            </div>
+                            <iframe src="nicheport2/" class="preview-iframe" loading="lazy" title="NichePort Auto Repair Website Preview"></iframe>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="nicheport2/" target="_blank" class="portfolio-link">
@@ -227,7 +235,15 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/barber-preview.jpg" alt="Blade & Fade Barbers">
+                        <div class="website-preview-frame">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-url">barber-shop/</div>
+                            </div>
+                            <iframe src="barber-shop/" class="preview-iframe" loading="lazy" title="Blade & Fade Barbers Website Preview"></iframe>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="barber-shop/" target="_blank" class="portfolio-link">
@@ -250,7 +266,15 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/cafe-preview.jpg" alt="Brew & Bite Cafe">
+                        <div class="website-preview-frame">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-url">small-cafe/</div>
+                            </div>
+                            <iframe src="small-cafe/" class="preview-iframe" loading="lazy" title="Brew & Bite Cafe Website Preview"></iframe>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="small-cafe/" target="_blank" class="portfolio-link">
@@ -273,7 +297,15 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/ambassadors-preview.jpg" alt="Ambassadors Motorcycle Ministry">
+                        <div class="website-preview-frame">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-url">ambassadorsmmtx.com</div>
+                            </div>
+                            <iframe src="http://ambassadorsmmtx.com/" class="preview-iframe" loading="lazy" title="Ambassadors Motorcycle Ministry Website Preview"></iframe>
+                        </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="http://ambassadorsmmtx.com/" target="_blank" class="portfolio-link">

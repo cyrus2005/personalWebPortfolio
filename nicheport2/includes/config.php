@@ -1,19 +1,16 @@
 <?php
-// Database configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'elite_collision');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Include shared database configuration
+require_once '../../shared-config/database.php';
 
 // Site configuration
 define('SITE_NAME', 'Elite Collision Repair');
-define('SITE_URL', 'http://localhost/nicheport2');
-define('SITE_EMAIL', 'info@elitecollision.com');
+define('SITE_URL', 'https://cyruswilburn.dev/nicheport2');
+define('SITE_EMAIL', 'cyrus@cyruswilburn.dev');
 define('SITE_PHONE', '(270) 801-9780');
 
 // Contact information
 define('CONTACT_PHONE', '2708019780');
-define('CONTACT_EMAIL', 'info@elitecollision.com');
+define('CONTACT_EMAIL', 'cyrus@cyruswilburn.dev');
 define('CONTACT_ADDRESS', '123 Main Street, Your City, KY 12345');
 
 // Business hours
@@ -50,47 +47,41 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Database connection
-try {
-    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    // If database doesn't exist, create it
-    try {
-        $pdo = new PDO("mysql:host=" . DB_HOST, DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        // Create database
-        $pdo->exec("CREATE DATABASE IF NOT EXISTS " . DB_NAME);
-        $pdo->exec("USE " . DB_NAME);
-        
-        // Create tables
-        $pdo->exec("
-            CREATE TABLE IF NOT EXISTS quotes (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                name VARCHAR(100) NOT NULL,
-                phone VARCHAR(20) NOT NULL,
-                email VARCHAR(100),
-                vehicle_info VARCHAR(200) NOT NULL,
-                damage_description TEXT NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ");
-        
-        $pdo->exec("
-            CREATE TABLE IF NOT EXISTS contacts (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                name VARCHAR(100) NOT NULL,
-                email VARCHAR(100) NOT NULL,
-                phone VARCHAR(20),
-                subject VARCHAR(200),
-                message TEXT NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ");
-        
-    } catch(PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
+// Get database connection
+$pdo = getDatabaseConnection();
+
+// If database connection fails, create database and tables
+if (!$pdo) {
+    $pdo = createDatabaseIfNotExists();
+    if ($pdo) {
+        // Create tables for NichePort
+        try {
+            $pdo->exec("
+                CREATE TABLE IF NOT EXISTS quotes (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    name VARCHAR(100) NOT NULL,
+                    phone VARCHAR(20) NOT NULL,
+                    email VARCHAR(100),
+                    vehicle_info VARCHAR(200) NOT NULL,
+                    damage_description TEXT NOT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ");
+            
+            $pdo->exec("
+                CREATE TABLE IF NOT EXISTS contacts (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    name VARCHAR(100) NOT NULL,
+                    email VARCHAR(100) NOT NULL,
+                    phone VARCHAR(20),
+                    subject VARCHAR(200),
+                    message TEXT NOT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            ");
+        } catch(PDOException $e) {
+            error_log("Error creating NichePort tables: " . $e->getMessage());
+        }
     }
 }
 ?>
