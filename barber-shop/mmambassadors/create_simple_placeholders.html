@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Placeholder Images</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f8f9fa;
+        }
+        .placeholder { 
+            width: 400px; 
+            height: 300px; 
+            background: linear-gradient(135deg, #dc143c, #ff6b6b);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        .placeholder-content {
+            position: relative;
+            z-index: 2;
+        }
+        .placeholder-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .placeholder-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .placeholder-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Placeholder Images for MM Ambassadors Gallery</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <p>Right-click on each placeholder below and "Save image as" to create the actual image files. Save them in the <code>mediaGallery/</code> folder with the exact filenames shown.</p>
+    </div>
+    
+    <h2>Sample Photos (from database)</h2>
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">📸</div>
+            <div class="placeholder-title">Ministry Meeting</div>
+            <div class="placeholder-subtitle">sample1.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">🏍️</div>
+            <div class="placeholder-title">Community Ride</div>
+            <div class="placeholder-subtitle">sample2.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">🙏</div>
+            <div class="placeholder-title">Prayer Circle</div>
+            <div class="placeholder-subtitle">sample3.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">✝️</div>
+            <div class="placeholder-title">Bike Blessing</div>
+            <div class="placeholder-subtitle">sample4.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">🍽️</div>
+            <div class="placeholder-title">Fellowship Dinner</div>
+            <div class="placeholder-subtitle">sample5.jpg</div>
+        </div>
+    </div>
+    
+    <h2>Additional Photos</h2>
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">🏍️</div>
+            <div class="placeholder-title">Group Ride</div>
+            <div class="placeholder-subtitle">ride1.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">🛣️</div>
+            <div class="placeholder-title">Highway Ministry</div>
+            <div class="placeholder-subtitle">ride2.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">👥</div>
+            <div class="placeholder-title">Brotherhood Meeting</div>
+            <div class="placeholder-subtitle">meeting1.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">🎉</div>
+            <div class="placeholder-title">Community Event</div>
+            <div class="placeholder-subtitle">event1.jpg</div>
+        </div>
+    </div>
+    
+    <div class="placeholder">
+        <div class="placeholder-content">
+            <div class="placeholder-icon">🙏</div>
+            <div class="placeholder-title">Prayer Time</div>
+            <div class="placeholder-subtitle">prayer1.jpg</div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <h3>After saving the images:</h3>
+        <ol>
+            <li>Save each image with the exact filename shown in the subtitle</li>
+            <li>Place all images in the <code>mediaGallery/</code> folder</li>
+            <li>Refresh the gallery page to see the images</li>
+            <li>Use the admin upload feature to add more photos</li>
+        </ol>
+    </div>
+</body>
+</html>

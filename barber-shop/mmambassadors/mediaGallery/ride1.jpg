@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Ride</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #dc143c, #ff6b6b);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .content {
+            background: rgba(0,0,0,0.3);
+            padding: 40px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .icon { font-size: 48px; margin-bottom: 20px; }
+        .title { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+        .subtitle { font-size: 14px; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div class='content'>
+        <div class='icon'>📸</div>
+        <div class='title'>Group Ride</div>
+        <div class='subtitle'>Sample Image</div>
+    </div>
+</body>
+</html>

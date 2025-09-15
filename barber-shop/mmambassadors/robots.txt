@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to access all content
+Allow: /gallery.php
+Allow: /events.php
+Allow: /prayer.php
+Allow: /mediaGallery/
+Allow: /mediaStickers/
+Allow: /eventImages/
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+
+# Disallow sensitive files
+Disallow: /*.log
+Disallow: /*.sql
+Disallow: /*.zip
+Disallow: /*.bak
+
+# Sitemap location
+Sitemap: https://ambassadorsmmtx.com/sitemap.xml
+
+# Crawl delay (optional - be nice to servers)
+Crawl-delay: 1

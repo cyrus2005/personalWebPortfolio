@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Disallow access to sensitive directories
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /*.log
+Disallow: /*.json
+
+# Allow access to portfolio projects
+Allow: /nicheport2/
+Allow: /barber-shop/
+Allow: /small-cafe/
+
+# Sitemap location (update when you create a sitemap)
+# Sitemap: https://cyruswilburn.dev/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
