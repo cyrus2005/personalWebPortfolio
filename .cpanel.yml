@@ -1,28 +1,7 @@
 ---
 deployment:
   tasks:
-    # Set the deployment path (update 'cyruswilburn' to your actual cPanel username)
-    - export DEPLOYPATH=/home/cyruswilburn/public_html/
-    
-    # Copy main files
-    - /bin/cp index.php $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH
-    - /bin/cp robots.txt $DEPLOYPATH
-    
-    # Copy assets directory
-    - /bin/cp -R assets $DEPLOYPATH
-    
-    # Copy includes directory
-    - /bin/cp -R includes $DEPLOYPATH
-    
-    # Copy logs directory
-    - /bin/cp -R logs $DEPLOYPATH
-    
-    # Copy portfolio websites
-    - /bin/cp -R nicheport2 $DEPLOYPATH
-    - /bin/cp -R barber-shop $DEPLOYPATH
-    - /bin/cp -R small-cafe $DEPLOYPATH
-    
-    # Set proper permissions
+    - export DEPLOYPATH=/home/cyruwjtb/public_html/
+    - /bin/cp -R * $DEPLOYPATH
     - /bin/chmod 755 $DEPLOYPATH/logs
     - /bin/chmod 644 $DEPLOYPATH/includes/contact_handler.php

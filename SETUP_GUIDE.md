@@ -77,6 +77,17 @@ After cloning the repository:
 
 ## Troubleshooting
 
+### cPanel Git Deployment Not Working
+1. **Check .cpanel.yml file**: Make sure it's in the root directory and properly formatted
+2. **Verify repository requirements**:
+   - Valid `.cpanel.yml` file exists
+   - No uncommitted changes
+   - Clean working tree
+3. **Check deployment path**: The `$HOME/public_html/` should work automatically
+4. **Try manual deployment**: Use "Deploy HEAD Commit" button in cPanel
+5. **Check cPanel logs**: Look for deployment error messages
+6. **Verify file permissions**: Make sure cPanel can write to your directory
+
 ### Contact Form Not Working
 1. Check PHP mail configuration
 2. Verify email address in `contact_handler.php`

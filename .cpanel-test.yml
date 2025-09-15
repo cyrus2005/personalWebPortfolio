@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/
+    - /bin/echo "Deployment started" > $DEPLOYPATH/deployment-test.txt
+    - /bin/cp index.php $DEPLOYPATH
+    - /bin/echo "Deployment completed" >> $DEPLOYPATH/deployment-test.txt
