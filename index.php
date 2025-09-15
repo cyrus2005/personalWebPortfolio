@@ -199,15 +199,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- Ambassadors MM - First Position -->
                 <div class="portfolio-item featured">
                     <div class="portfolio-image">
-                        <div class="website-preview-frame">
-                            <div class="preview-header">
-                                <div class="preview-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <div class="preview-url">ambassadorsmmtx.com</div>
-                            </div>
-                            <iframe src="http://ambassadorsmmtx.com/" class="preview-iframe" loading="lazy" title="Ambassadors Motorcycle Ministry Website Preview" sandbox="allow-scripts allow-same-origin"></iframe>
-                        </div>
+                        <img src="assets/images/ambassadors-preview.jpg" alt="Ambassadors MM Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="http://ambassadorsmmtx.com/" target="_blank" class="portfolio-link">
@@ -229,6 +221,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                             <span class="tech-tag">PHP</span>
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">Gallery System</span>
+                            <span class="tech-tag ssl-in-progress">SSL In Progress</span>
                         </div>
                     </div>
                 </div>
@@ -236,15 +229,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- NichePort - Auto Repair - Second Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <div class="website-preview-frame">
-                            <div class="preview-header">
-                                <div class="preview-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <div class="preview-url">nicheport2/</div>
-                            </div>
-                            <iframe src="nicheport2/" class="preview-iframe" loading="lazy" title="NichePort Auto Repair Website Preview"></iframe>
-                        </div>
+                        <img src="assets/images/nicheport-preview.jpg" alt="NichePort Auto Repair Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="nicheport2/" target="_blank" class="portfolio-link">
@@ -262,6 +247,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">Responsive</span>
                             <span class="tech-tag">SEO</span>
+                            <span class="tech-tag ssl-secure">SSL Secure</span>
                         </div>
                     </div>
                 </div>
@@ -269,15 +255,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- Barber Shop - Third Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <div class="website-preview-frame">
-                            <div class="preview-header">
-                                <div class="preview-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <div class="preview-url">barber-shop/</div>
-                            </div>
-                            <iframe src="barber-shop/" class="preview-iframe" loading="lazy" title="Blade & Fade Barbers Website Preview"></iframe>
-                        </div>
+                        <img src="assets/images/barber-preview.jpg" alt="Blade & Fade Barbers Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="barber-shop/" target="_blank" class="portfolio-link">
@@ -294,6 +272,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                             <span class="tech-tag">PHP</span>
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">Booking System</span>
+                            <span class="tech-tag ssl-secure">SSL Secure</span>
                         </div>
                     </div>
                 </div>
@@ -301,15 +280,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <!-- Small Cafe - Fourth Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <div class="website-preview-frame">
-                            <div class="preview-header">
-                                <div class="preview-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <div class="preview-url">small-cafe/</div>
-                            </div>
-                            <iframe src="small-cafe/" class="preview-iframe" loading="lazy" title="Brew & Bite Cafe Website Preview"></iframe>
-                        </div>
+                        <img src="assets/images/cafe-preview.jpg" alt="Brew & Bite Cafe Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-overlay">
                             <div class="portfolio-links">
                                 <a href="small-cafe/" target="_blank" class="portfolio-link">
@@ -326,6 +297,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag ssl-secure">SSL Secure</span>
                         </div>
                     </div>
                 </div>

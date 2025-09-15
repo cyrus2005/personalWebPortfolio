@@ -207,14 +207,17 @@ p {
 }
 
 .cta-button.secondary {
-    background: transparent;
+    background: var(--white);
     color: var(--primary-blue);
     border: 2px solid var(--primary-blue);
+    box-shadow: var(--shadow-md);
 }
 
 .cta-button.secondary:hover {
     background: var(--primary-blue);
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .cta-button.large {
@@ -774,6 +777,18 @@ p {
     border-radius: 1rem;
     font-size: 0.8rem;
     font-weight: 500;
+}
+
+.tech-tag.ssl-secure {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.tech-tag.ssl-in-progress {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
 }
 
 .portfolio-cta {
