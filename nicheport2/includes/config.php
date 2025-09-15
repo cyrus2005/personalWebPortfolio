@@ -2,8 +2,18 @@
 // Include shared database configuration
 require_once '../../shared-config/database.php';
 
-// Get database connection for this site
-$pdo = getSiteDatabaseConnection('nicheport');
+// Get database connection for this site (with error handling)
+try {
+    $pdo = getSiteDatabaseConnection('nicheport');
+    if (!$pdo) {
+        // Fallback to main database
+        $pdo = getDatabaseConnection();
+    }
+} catch (Exception $e) {
+    // If database fails, set to null and continue without database
+    $pdo = null;
+    error_log("NichePort2 database connection failed: " . $e->getMessage());
+}
 
 // Site configuration
 define('SITE_NAME', 'Elite Collision Repair');

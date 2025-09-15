@@ -2,8 +2,18 @@
 // Include shared database configuration
 require_once '../../shared-config/database.php';
 
-// Get database connection for this site
-$pdo = getSiteDatabaseConnection('barber');
+// Get database connection for this site (with error handling)
+try {
+    $pdo = getSiteDatabaseConnection('barber');
+    if (!$pdo) {
+        // Fallback to main database
+        $pdo = getDatabaseConnection();
+    }
+} catch (Exception $e) {
+    // If database fails, set to null and continue without database
+    $pdo = null;
+    error_log("Barber Shop database connection failed: " . $e->getMessage());
+}
 
 // If database connection fails, create database and tables
 if (!$pdo) {
