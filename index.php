@@ -148,9 +148,9 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <a href="tel:2708019780" class="phone-btn">
-                    <i class="fas fa-phone"></i>
-                    <span>(270) 801-9780</span>
+                <a href="#contact" class="btn btn-primary nav-cta-btn">
+                    <i class="fas fa-rocket"></i>
+                    <span>Start Your Project</span>
                 </a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -237,112 +237,128 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">My Work</span>
-                <h2 class="section-title">Recent Projects</h2>
-                <p class="section-description">Professional websites built for real businesses that drive real results</p>
+                <h2>My Recent Work</h2>
+                <p>Professional websites built for real businesses that drive real results</p>
             </div>
-            <div class="portfolio-grid">
-                <!-- Ambassadors MM -->
-                <div class="portfolio-card featured">
-                    <div class="card-image">
-                        <div class="project-preview">
+            <div class="portfolio-grid portfolio-grid-2x2">
+                <!-- Ambassadors MM - First Position -->
+                <div class="portfolio-item featured">
+                    <div class="portfolio-image">
+                        <img src="assets/images/ambassadors-preview.jpg" alt="Ambassadors MM Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
                             <i class="fas fa-motorcycle"></i>
                             <h4>Ambassadors MM</h4>
-                            <p>Motorcycle Ministry</p>
+                            <p>Motorcycle Ministry Website</p>
                         </div>
-                        <div class="card-overlay">
-                            <a href="http://ambassadorsmmtx.com/" target="_blank" class="preview-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>Visit Site</span>
-                            </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="http://ambassadorsmmtx.com/" target="_blank" class="portfolio-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Go to Live Site</span>
+                                </a>
+                                <a href="#contact" class="portfolio-link">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Get Similar Site</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-content">
-                        <div class="project-badge">Featured</div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-badge">Featured Project</div>
                         <h3>Ambassadors MM</h3>
                         <p>Motorcycle ministry website with event calendar, photo gallery, and prayer requests. Community-focused design with strong messaging.</p>
-                        <div class="tech-stack">
+                        <div class="portfolio-tech">
                             <span class="tech-tag">PHP</span>
                             <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Gallery</span>
-                            <span class="tech-tag ssl-progress">SSL In Progress</span>
+                            <span class="tech-tag">Gallery System</span>
+                            <span class="tech-tag ssl-in-progress">SSL In Progress</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- NichePort -->
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <div class="project-preview">
+                <!-- NichePort - Auto Repair - Second Position -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="assets/images/nicheport-preview.jpg" alt="NichePort Auto Repair Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
                             <i class="fas fa-car"></i>
                             <h4>NichePort</h4>
-                            <p>Auto Repair</p>
+                            <p>Auto Repair Website</p>
                         </div>
-                        <div class="card-overlay">
-                            <a href="nicheport2/" target="_blank" class="preview-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>Visit Site</span>
-                            </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="nicheport2/" target="_blank" class="portfolio-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Go to Live Site</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-content">
-                        <h3>NichePort Auto Repair</h3>
-                        <p>High-converting auto repair website with online booking, service showcase, and customer testimonials.</p>
-                        <div class="tech-stack">
+                    <div class="portfolio-content">
+                        <h3>NichePort - Auto Repair</h3>
+                        <p>High-converting auto repair website with online booking, service showcase, and customer testimonials. Features include quote forms, gallery, and mobile optimization.</p>
+                        <div class="portfolio-tech">
                             <span class="tech-tag">PHP</span>
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">Responsive</span>
+                            <span class="tech-tag">SEO</span>
                             <span class="tech-tag ssl-secure">SSL Secure</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Barber Shop -->
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <div class="project-preview">
+                <!-- Barber Shop - Third Position -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="assets/images/barber-preview.jpg" alt="Blade & Fade Barbershop Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
                             <i class="fas fa-cut"></i>
                             <h4>Blade & Fade</h4>
-                            <p>Barbershop</p>
+                            <p>Barbershop Website</p>
                         </div>
-                        <div class="card-overlay">
-                            <a href="barber-shop/" target="_blank" class="preview-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>Visit Site</span>
-                            </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="barber-shop/" target="_blank" class="portfolio-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Go to Live Site</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-content">
+                    <div class="portfolio-content">
                         <h3>Blade & Fade Barbers</h3>
-                        <p>Modern barbershop website with appointment booking, service gallery, and customer reviews.</p>
-                        <div class="tech-stack">
+                        <p>Modern barbershop website with appointment booking, service gallery, and customer reviews. Clean design with strong call-to-actions.</p>
+                        <div class="portfolio-tech">
                             <span class="tech-tag">PHP</span>
                             <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Booking</span>
+                            <span class="tech-tag">Booking System</span>
                             <span class="tech-tag ssl-secure">SSL Secure</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Small Cafe -->
-                <div class="portfolio-card">
-                    <div class="card-image">
-                        <div class="project-preview">
+                
+                <!-- Small Cafe - Fourth Position -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="assets/images/cafe-preview.jpg" alt="Brew & Bite Cafe Website Preview" class="portfolio-preview-img">
+                        <div class="portfolio-preview-placeholder">
                             <i class="fas fa-coffee"></i>
                             <h4>Brew & Bite</h4>
-                            <p>Cafe</p>
+                            <p>Cafe Website</p>
                         </div>
-                        <div class="card-overlay">
-                            <a href="small-cafe/" target="_blank" class="preview-btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>Visit Site</span>
-                            </a>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="small-cafe/" target="_blank" class="portfolio-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Go to Live Site</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-content">
+                    <div class="portfolio-content">
                         <h3>Brew & Bite Cafe</h3>
-                        <p>Cozy cafe website with menu display, customer reviews, and location information.</p>
-                        <div class="tech-stack">
+                        <p>Cozy cafe website with menu display, customer reviews, and location information. Warm design that reflects the cafe's atmosphere.</p>
+                        <div class="portfolio-tech">
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
@@ -389,6 +405,18 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce Solutions</h3>
+                    <p>Complete online stores with payment processing, inventory management, and order tracking.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Payment Integration</li>
+                        <li><i class="fas fa-check"></i> Inventory Management</li>
+                        <li><i class="fas fa-check"></i> Order Tracking</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <h3>SEO Optimization</h3>
@@ -409,6 +437,18 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                         <li><i class="fas fa-check"></i> SSL Certificates</li>
                         <li><i class="fas fa-check"></i> Security Headers</li>
                         <li><i class="fas fa-check"></i> Data Protection</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>I Do It All!</h3>
+                    <p>From concept to launch, I handle every aspect of your web project. No job too big or small!</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Full Project Management</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                        <li><i class="fas fa-check"></i> Custom Solutions</li>
                     </ul>
                 </div>
             </div>
