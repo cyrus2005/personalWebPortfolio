@@ -1,21 +1,10 @@
-# Cyrus Wilburn Portfolio - Setup Guide
+# Setup Guide - Cyrus Wilburn Portfolio
 
 ## Quick Setup for cPanel Hosting
 
 ### 1. Upload Files
-1. Upload all files to your cPanel public_html directory
-2. Ensure the file structure is maintained:
-   ```
-   public_html/
-   ├── index.php
-   ├── assets/
-   ├── includes/
-   ├── logs/
-   ├── nicheport2/
-   ├── barber-shop/
-   ├── small-cafe/
-   └── .htaccess
-   ```
+1. Upload all files to your cPanel `public_html` directory
+2. Maintain the file structure as shown in the repository
 
 ### 2. Set Permissions
 Set the following directory permissions:
@@ -48,82 +37,40 @@ Replace the placeholder images in `assets/images/` with actual screenshots:
 - `cafe-preview.jpg` - Screenshot of cafe website
 - `ambassadors-preview.jpg` - Screenshot of ministry website
 
-### 7. SSL Certificate (Recommended)
-1. Install SSL certificate in cPanel
-2. Uncomment the HTTPS redirect lines in `.htaccess`:
-   ```apache
-   RewriteCond %{HTTPS} off
-   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-   ```
+## Deployment Methods
 
-### 8. Domain Configuration
-1. Point your domain to the hosting
-2. Update any DNS settings as needed
-3. Test the website on the live domain
+### Method 1: cPanel Git Integration (Recommended)
+1. In cPanel, go to "Git Version Control"
+2. Click "Clone a Repository"
+3. Enter: `https://github.com/cyrus2005/personalPortfolioCyrus.git`
+4. Choose `public_html` as directory
+5. Click "Clone"
 
-## Features Included
+### Method 2: File Manager Upload
+1. Download the repository as ZIP
+2. Upload to cPanel File Manager
+3. Extract in `public_html` directory
 
-### ✅ Professional Design
-- Modern, clean layout
-- Mobile-responsive design
-- Professional color scheme
-- High-converting layout
+### Method 3: FTP Upload
+1. Use FTP client (FileZilla, WinSCP)
+2. Upload all files to `public_html`
+3. Set proper permissions
 
-### ✅ Portfolio Showcase
-- Featured projects section
-- Live website links
-- Technology tags
-- Project descriptions
+## Post-Deployment Checklist
 
-### ✅ Contact System
-- Multiple contact methods (call, text, form)
-- Professional contact form
-- Email notifications
-- Auto-reply system
-- Spam protection
-
-### ✅ SEO Optimization
-- Meta tags and descriptions
-- Structured data
-- Mobile-first design
-- Fast loading
-- Clean URLs
-
-### ✅ Security Features
-- Input validation and sanitization
-- Rate limiting
-- Spam protection
-- Security headers
-- File protection
-
-## Customization Options
-
-### Colors
-Update CSS variables in `assets/css/style.css`:
-```css
-:root {
-    --primary-blue: #2563eb;
-    --accent-orange: #f59e0b;
-    /* Update these colors as needed */
-}
-```
-
-### Content
-- Update services in the services section
-- Modify portfolio projects
-- Change testimonials and reviews
-- Update about section
-
-### Contact Information
-- Phone: (270) 801-9780
-- Email: cyrus@cyruswilburn.dev
-- Update throughout the site
+- [ ] SSL certificate installed
+- [ ] Contact form working and sending emails
+- [ ] All portfolio links working
+- [ ] Mobile responsiveness tested
+- [ ] Images loading correctly
+- [ ] File permissions set correctly
+- [ ] Email address updated in contact handler
 
 ## Troubleshooting
 
 ### Contact Form Not Working
 1. Check PHP mail configuration
-2. Verify email address in contact_handler.php
+2. Verify email address in `contact_handler.php`
 3. Check logs directory permissions
 4. Test with a simple PHP mail script
 
@@ -142,40 +89,7 @@ Update CSS variables in `assets/css/style.css`:
 ## Support
 
 For technical support or customization requests:
-- Phone: (270) 801-9780
-- Email: cyrus@cyruswilburn.dev
-
-## Performance Tips
-
-1. **Optimize Images**: Compress images before uploading
-2. **Enable Caching**: Use browser caching headers
-3. **Minify CSS/JS**: Compress files for faster loading
-4. **Use CDN**: Consider a content delivery network
-5. **Monitor Performance**: Use tools like Google PageSpeed Insights
-
-## Security Checklist
-
-- [ ] SSL certificate installed
-- [ ] Contact form protected against spam
-- [ ] Sensitive files protected
-- [ ] Regular backups scheduled
-- [ ] Security headers enabled
-- [ ] File permissions set correctly
-
-## Maintenance
-
-### Regular Tasks
-- Monitor contact form submissions
-- Check for broken links
-- Update portfolio projects
-- Review and respond to inquiries
-- Backup website files
-
-### Monthly Tasks
-- Review website analytics
-- Update content as needed
-- Check for security updates
-- Test all functionality
-- Review contact form logs
+- **Phone**: (270) 801-9780
+- **Email**: cyrus@cyruswilburn.dev
 
 Your professional portfolio website is now ready to attract clients and showcase your web development skills!
