@@ -2,6 +2,11 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cyruwjtb/public_html/
+    - git fetch origin
+    - git reset --hard origin/main
     - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R .htaccess $DEPLOYPATH
+    - /bin/cp -R robots.txt $DEPLOYPATH
+    - /bin/cp -R sitemap.xml $DEPLOYPATH
     - /bin/chmod 755 $DEPLOYPATH/logs
     - /bin/chmod 644 $DEPLOYPATH/includes/contact_handler.php
