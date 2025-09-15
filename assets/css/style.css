@@ -215,6 +215,7 @@ p {
     color: var(--primary-blue);
     border: 2px solid var(--primary-blue);
     box-shadow: var(--shadow-md);
+    font-weight: 600;
 }
 
 .cta-button.secondary:hover {
@@ -222,6 +223,13 @@ p {
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.cta-button.secondary.large {
+    background: var(--white);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    box-shadow: var(--shadow-md);
 }
 
 .cta-button.large {
