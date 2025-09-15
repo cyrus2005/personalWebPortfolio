@@ -45,6 +45,7 @@ Replace the placeholder images in `assets/images/` with actual screenshots:
 3. Enter: `https://github.com/cyrus2005/personalPortfolioCyrus.git`
 4. Choose `public_html` as directory
 5. Click "Clone"
+6. The `.cpanel.yml` file will automatically deploy all files to `public_html`
 
 ### Method 2: File Manager Upload
 1. Download the repository as ZIP
