@@ -121,17 +121,17 @@ function isDatabaseConnected() {
     
     <div style="margin: 15px 0;">
         <label for="db_name" style="display: block; margin-bottom: 5px; font-weight: bold;">Database Name: *</label>
-        <input type="text" id="db_name" name="db_name" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;" placeholder="e.g., cyruwjtb_portfolio">
+        <input type="text" id="db_name" name="db_name" value="cyruwjtb_portfolio" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;">
     </div>
     
     <div style="margin: 15px 0;">
         <label for="db_user" style="display: block; margin-bottom: 5px; font-weight: bold;">Database Username: *</label>
-        <input type="text" id="db_user" name="db_user" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;" placeholder="e.g., cyruwjtb_portfolio">
+        <input type="text" id="db_user" name="db_user" value="cyruwjtb_admin" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;">
     </div>
     
     <div style="margin: 15px 0;">
         <label for="db_pass" style="display: block; margin-bottom: 5px; font-weight: bold;">Database Password: *</label>
-        <input type="password" id="db_pass" name="db_pass" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;">
+        <input type="password" id="db_pass" name="db_pass" value="Pjah6966!$" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 3px;">
     </div>
     
     <button type="submit" name="setup_database" value="1" style="background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer; font-size: 16px;">

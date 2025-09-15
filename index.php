@@ -178,7 +178,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                         <div class="card-content">
                             <p>"Cyrus built an amazing website for my business. Professional, fast, and exactly what I needed!"</p>
                             <div class="author">
-                                <strong>Sarah M.</strong>
+                                <strong>Dennis W.</strong>
                                 <span>Business Owner</span>
                             </div>
                         </div>

@@ -3,11 +3,11 @@
 // This file should be included by all websites
 
 // cPanel Database Configuration
-// Update these values with your actual cPanel database details
+// Updated with actual cPanel database details
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'cyruwjtb_portfolio'); // Your cPanel database name
-define('DB_USER', 'cyruwjtb_portfolio'); // Your cPanel database username
-define('DB_PASS', 'your_database_password'); // Your cPanel database password
+define('DB_USER', 'cyruwjtb_admin'); // Your cPanel database username
+define('DB_PASS', 'Pjah6966!$'); // Your cPanel database password
 
 // Alternative: Use environment variables if available
 if (getenv('DB_HOST')) {
