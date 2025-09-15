@@ -1,7 +1,7 @@
 <?php
 $page_title = "Cyrus Wilburn - Professional Web Developer | Custom Websites That Convert";
-$page_description = "Professional web developer specializing in high-converting business websites. From auto repair to cafes, I build websites that turn visitors into customers. Call (270) 801-9780 for a free consultation.";
-$page_keywords = "web developer, custom websites, business websites, web design, PHP developer, responsive design, SEO optimization, maroon red design";
+$page_description = "Cyrus Wilburn is a professional web developer specializing in high-converting business websites. From auto repair to cafes, I build websites that turn visitors into customers. Call (270) 801-9780 for a free consultation.";
+$page_keywords = "Cyrus Wilburn, web developer, custom websites, business websites, web design, PHP developer, responsive design, SEO optimization, freelance web developer, website designer, e-commerce development";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,21 @@ $page_keywords = "web developer, custom websites, business websites, web design,
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cyruswilburn.dev">
     <meta property="og:image" content="https://cyruswilburn.dev/assets/images/portfolio-preview.jpg">
+    <meta property="og:site_name" content="Cyrus Wilburn - Professional Web Developer">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo $page_title; ?>">
+    <meta name="twitter:description" content="<?php echo $page_description; ?>">
+    <meta name="twitter:image" content="https://cyruswilburn.dev/assets/images/portfolio-preview.jpg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="Cyrus Wilburn">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <link rel="canonical" href="https://cyruswilburn.dev">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -40,12 +55,80 @@ $page_keywords = "web developer, custom websites, business websites, web design,
         "@type": "Person",
         "name": "Cyrus Wilburn",
         "jobTitle": "Professional Web Developer",
-        "description": "Custom website developer specializing in business websites",
+        "description": "Cyrus Wilburn is a professional web developer specializing in custom business websites, e-commerce, and web design. Expert in PHP, MySQL, responsive design, and SEO optimization.",
         "telephone": "+1-270-801-9780",
+        "email": "cyrus@cyruswilburn.dev",
         "url": "https://cyruswilburn.dev",
         "sameAs": [
             "https://github.com/cyrus2005"
-        ]
+        ],
+        "knowsAbout": [
+            "Web Development",
+            "Website Design",
+            "PHP Development",
+            "MySQL Database",
+            "Responsive Design",
+            "SEO Optimization",
+            "E-commerce Development",
+            "Business Websites",
+            "Custom Web Applications"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Web Developer",
+            "description": "Professional web developer creating custom websites for businesses"
+        }
+    }
+    </script>
+    
+    <!-- Local Business Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Cyrus Wilburn Web Development",
+        "description": "Professional website development and design services",
+        "url": "https://cyruswilburn.dev",
+        "telephone": "+1-270-801-9780",
+        "email": "cyrus@cyruswilburn.dev",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Website Development",
+                        "description": "Professional custom websites for businesses"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "E-commerce Development",
+                        "description": "Online store development and management"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Website Design",
+                        "description": "Professional website design and user experience"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "SEO Optimization",
+                        "description": "Search engine optimization for better rankings"
+                    }
+                }
+            ]
+        }
     }
     </script>
 </head>

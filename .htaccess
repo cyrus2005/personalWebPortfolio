@@ -1,4 +1,5 @@
 # Cyrus Wilburn Portfolio - .htaccess Configuration
+# SEO Optimized
 
 # Enable URL rewriting
 RewriteEngine On
@@ -10,6 +11,12 @@ RewriteEngine On
 # Remove www (or add www - choose one)
 # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# SEO-friendly redirects for common searches
+RewriteRule ^cyrus-wilburn/?$ / [R=301,L]
+RewriteRule ^web-developer/?$ / [R=301,L]
+RewriteRule ^website-developer/?$ / [R=301,L]
+RewriteRule ^freelance-web-developer/?$ / [R=301,L]
 
 # Custom error pages
 ErrorDocument 404 /404.html
