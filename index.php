@@ -17,7 +17,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <meta property="og:description" content="<?php echo $page_description; ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cyruswilburn.dev">
-    <meta property="og:image" content="https://cyruswilburn.dev/assets/images/portfolio-preview.jpg">
+    <meta property="og:image" content="https://cyruswilburn.dev/assets/images/portfolio-preview.svg">
     <meta property="og:site_name" content="Cyrus Wilburn - Professional Web Developer">
     <meta property="og:locale" content="en_US">
     
@@ -25,7 +25,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo $page_title; ?>">
     <meta name="twitter:description" content="<?php echo $page_description; ?>">
-    <meta name="twitter:image" content="https://cyruswilburn.dev/assets/images/portfolio-preview.jpg">
+    <meta name="twitter:image" content="https://cyruswilburn.dev/assets/images/portfolio-preview.svg">
     
     <!-- Additional SEO Meta Tags -->
     <meta name="author" content="Cyrus Wilburn">
@@ -35,7 +35,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <link rel="canonical" href="https://cyruswilburn.dev">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style-new.css">
@@ -244,7 +244,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <!-- Ambassadors MM - First Position -->
                 <div class="portfolio-item featured">
                     <div class="portfolio-image">
-                        <img src="assets/images/ambassadors-preview.jpg" alt="Ambassadors MM Website Preview" class="portfolio-preview-img">
+                        <img src="assets/images/ambassadors-preview.svg" alt="Ambassadors MM Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-preview-placeholder">
                             <i class="fas fa-motorcycle"></i>
                             <h4>Ambassadors MM</h4>
@@ -279,7 +279,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <!-- NichePort - Auto Repair - Second Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/nicheport-preview.jpg" alt="NichePort Auto Repair Website Preview" class="portfolio-preview-img">
+                        <img src="assets/images/nicheport-preview.svg" alt="NichePort Auto Repair Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-preview-placeholder">
                             <i class="fas fa-car"></i>
                             <h4>NichePort</h4>
@@ -310,7 +310,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <!-- Barber Shop - Third Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/barber-preview.jpg" alt="Blade & Fade Barbershop Website Preview" class="portfolio-preview-img">
+                        <img src="assets/images/barber-preview.svg" alt="Blade & Fade Barbershop Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-preview-placeholder">
                             <i class="fas fa-cut"></i>
                             <h4>Blade & Fade</h4>
@@ -340,7 +340,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <!-- Small Cafe - Fourth Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
-                        <img src="assets/images/cafe-preview.jpg" alt="Brew & Bite Cafe Website Preview" class="portfolio-preview-img">
+                        <img src="assets/images/cafe-preview.svg" alt="Brew & Bite Cafe Website Preview" class="portfolio-preview-img">
                         <div class="portfolio-preview-placeholder">
                             <i class="fas fa-coffee"></i>
                             <h4>Brew & Bite</h4>
