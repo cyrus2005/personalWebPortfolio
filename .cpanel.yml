@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export: /
+      to: public_html
