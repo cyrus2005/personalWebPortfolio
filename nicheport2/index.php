@@ -268,10 +268,6 @@ $page_description = "Get your car back to perfect condition with our premium col
                             <li><i class="fas fa-check"></i> OEM parts guarantee</li>
                             <li><i class="fas fa-check"></i> Lifetime warranty</li>
                         </ul>
-                        <div class="service-price">
-                            <span class="price-label">Starting at</span>
-                            <span class="price-amount">$299</span>
-                        </div>
                     </div>
                 </div>
                 <div class="service-card">
@@ -291,10 +287,6 @@ $page_description = "Get your car back to perfect condition with our premium col
                             <li><i class="fas fa-check"></i> Premium paint systems</li>
                             <li><i class="fas fa-check"></i> UV protection coating</li>
                         </ul>
-                        <div class="service-price">
-                            <span class="price-label">Starting at</span>
-                            <span class="price-amount">$199</span>
-                        </div>
                     </div>
                 </div>
                 <div class="service-card">
@@ -314,10 +306,6 @@ $page_description = "Get your car back to perfect condition with our premium col
                             <li><i class="fas fa-check"></i> Hail damage repair</li>
                             <li><i class="fas fa-check"></i> Door ding removal</li>
                         </ul>
-                        <div class="service-price">
-                            <span class="price-label">Starting at</span>
-                            <span class="price-amount">$99</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -364,7 +352,7 @@ $page_description = "Get your car back to perfect condition with our premium col
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Same-Day Estimates</h3>
-                    <p>Get your free estimate the same day you call. No waiting, no delays - just fast, accurate pricing.</p>
+                    <p>Get your free estimate the same day you call. No waiting, no delays - just fast, accurate estimates.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">

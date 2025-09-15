@@ -195,8 +195,46 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                 <h2>My Recent Work</h2>
                 <p>Professional websites built for real businesses that drive real results</p>
             </div>
-            <div class="portfolio-grid">
+            <div class="portfolio-grid portfolio-grid-2x2">
+                <!-- Ambassadors MM - First Position -->
                 <div class="portfolio-item featured">
+                    <div class="portfolio-image">
+                        <div class="website-preview-frame">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-url">ambassadorsmmtx.com</div>
+                            </div>
+                            <iframe src="http://ambassadorsmmtx.com/" class="preview-iframe" loading="lazy" title="Ambassadors Motorcycle Ministry Website Preview" sandbox="allow-scripts allow-same-origin"></iframe>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-links">
+                                <a href="http://ambassadorsmmtx.com/" target="_blank" class="portfolio-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>View Live Site</span>
+                                </a>
+                                <a href="#contact" class="portfolio-link">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Get Similar Site</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-badge">Featured Project</div>
+                        <h3>Ambassadors MM</h3>
+                        <p>Motorcycle ministry website with event calendar, photo gallery, and prayer requests. Community-focused design with strong messaging.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Gallery System</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NichePort - Auto Repair - Second Position -->
+                <div class="portfolio-item">
                     <div class="portfolio-image">
                         <div class="website-preview-frame">
                             <div class="preview-header">
@@ -213,15 +251,10 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                                     <i class="fas fa-external-link-alt"></i>
                                     <span>View Live Site</span>
                                 </a>
-                                <a href="#contact" class="portfolio-link">
-                                    <i class="fas fa-info-circle"></i>
-                                    <span>Get Similar Site</span>
-                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="portfolio-content">
-                        <div class="portfolio-badge">Featured Project</div>
                         <h3>NichePort - Auto Repair</h3>
                         <p>High-converting auto repair website with online booking, service showcase, and customer testimonials. Features include quote forms, gallery, and mobile optimization.</p>
                         <div class="portfolio-tech">
@@ -233,6 +266,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                     </div>
                 </div>
                 
+                <!-- Barber Shop - Third Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <div class="website-preview-frame">
@@ -264,6 +298,7 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                     </div>
                 </div>
                 
+                <!-- Small Cafe - Fourth Position -->
                 <div class="portfolio-item">
                     <div class="portfolio-image">
                         <div class="website-preview-frame">
@@ -291,37 +326,6 @@ $page_keywords = "web developer, custom websites, business websites, web design,
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="website-preview-frame">
-                            <div class="preview-header">
-                                <div class="preview-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <div class="preview-url">ambassadorsmmtx.com</div>
-                            </div>
-                            <iframe src="http://ambassadorsmmtx.com/" class="preview-iframe" loading="lazy" title="Ambassadors Motorcycle Ministry Website Preview"></iframe>
-                        </div>
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-links">
-                                <a href="http://ambassadorsmmtx.com/" target="_blank" class="portfolio-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>View Live Site</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Ambassadors MM</h3>
-                        <p>Motorcycle ministry website with event calendar, photo gallery, and prayer requests. Community-focused design with strong messaging.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Gallery System</span>
                         </div>
                     </div>
                 </div>
