@@ -1,6 +1,29 @@
 // Modern JavaScript for Cyrus Wilburn Portfolio
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Check if Font Awesome loaded properly
+    function checkFontAwesome() {
+        const testIcon = document.createElement('i');
+        testIcon.className = 'fas fa-rocket';
+        testIcon.style.position = 'absolute';
+        testIcon.style.left = '-9999px';
+        document.body.appendChild(testIcon);
+        
+        const computedStyle = window.getComputedStyle(testIcon, '::before');
+        const content = computedStyle.getPropertyValue('content');
+        
+        // If Font Awesome didn't load, add fallback styles
+        if (!content || content === 'none' || content === '""') {
+            console.log('Font Awesome not loaded, using fallbacks');
+            document.body.classList.add('fa-fallback');
+        }
+        
+        document.body.removeChild(testIcon);
+    }
+    
+    // Run check after a short delay to allow Font Awesome to load
+    setTimeout(checkFontAwesome, 1000);
+    
     // Mobile Navigation Toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
@@ -325,4 +348,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(loadingStyle);
     
     console.log('Cyrus Wilburn Portfolio - JavaScript loaded successfully!');
+    
+    // Debug: Check if icons are visible
+    setTimeout(() => {
+        const icons = document.querySelectorAll('.fas, .far, .fab, .fa');
+        console.log(`Found ${icons.length} Font Awesome icons on page`);
+        
+        icons.forEach((icon, index) => {
+            if (index < 5) { // Check first 5 icons
+                const computedStyle = window.getComputedStyle(icon, '::before');
+                const content = computedStyle.getPropertyValue('content');
+                console.log(`Icon ${index + 1} (${icon.className}): content = "${content}"`);
+            }
+        });
+    }, 2000);
 });
