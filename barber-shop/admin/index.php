@@ -116,7 +116,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Blade & Fade Barbers</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
         .admin-header {
             background: #1a1a1a;

@@ -13,7 +13,7 @@ include 'includes/header.php';
     <meta name="description" content="<?php echo $page_description; ?>">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
         /* New Landing Page Styles */
         * {

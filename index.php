@@ -49,8 +49,8 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-        <!-- Font Awesome 6 -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <!-- Font Awesome 6.7.2 - Local -->
+        <link rel="stylesheet" href="assets/fonts/fontawesome/fontawesome-free-6.7.2-web/css/all.min.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
