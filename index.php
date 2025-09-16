@@ -34,11 +34,11 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <meta name="bingbot" content="index, follow">
     <link rel="canonical" href="https://cyruswilburn.dev">
     
-        <!-- Favicon -->
-        <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.svg">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.svg">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.svg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.svg">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -241,8 +241,8 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">My Work</span>
-                <h2 class="section-title">My Recent Work</h2>
-                <p class="section-description">Professional websites built for real businesses that drive real results</p>
+                <h2 class="section-title">Recent Projects</h2>
+                <p class="section-description">Professional websites that drive real business results</p>
             </div>
             <div class="portfolio-grid">
                 <!-- Ambassadors MM - Featured -->
@@ -442,35 +442,53 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
             <div class="about-content">
                 <div class="about-text">
                     <span class="section-badge">About Me</span>
-                    <h2 class="section-title">Professional Web Developer</h2>
+                    <h2 class="section-title">Why Choose Me?</h2>
                     <p class="about-description">
-                        I'm Cyrus Wilburn, a professional web developer specializing in creating high-converting websites for businesses. With experience building everything from auto repair shops to cafes, I understand what makes a website successful.
+                        I'm a passionate web developer with a proven track record of creating websites that not only look great but drive real business results. With expertise in modern web technologies and a focus on user experience, I help businesses establish a strong online presence.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Projects Completed</span>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>5+ Years Experience</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Client Satisfaction</span>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>20+ Successful Projects</span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">24hr</span>
-                            <span class="stat-label">Response Time</span>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Client Satisfaction</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Support</span>
                         </div>
                     </div>
                     <div class="about-cta">
                         <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-rocket"></i>
                             <span>Let's Work Together</span>
                         </a>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user-tie"></i>
-                        <p>Cyrus Wilburn</p>
+                <div class="about-visual">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Websites Built</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Mobile Responsive</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24hr</div>
+                            <div class="stat-label">Response Time</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -480,67 +498,74 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title">Ready to Start Your Project?</h2>
+                <p class="section-description">Let's discuss how I can help grow your business online</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <span class="section-badge">Get In Touch</span>
-                    <h2 class="section-title">Ready to Start Your Project?</h2>
-                    <p class="contact-description">
-                        Let's discuss your website needs and create something amazing together. I respond to all inquiries within 24 hours.
-                    </p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>Call Me</h4>
-                                <a href="tel:2708019780">(270) 801-9780</a>
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-content">
-                                <h4>Email Me</h4>
-                                <a href="mailto:cyrus@cyruswilburn.dev">cyrus@cyruswilburn.dev</a>
-                            </div>
+                        <div class="contact-details">
+                            <h3>Call Me</h3>
+                            <p><a href="tel:2708019780">(270) 801-9780</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Me</h3>
+                            <p><a href="mailto:cyrus@cyruswilburn.dev">cyrus@cyruswilburn.dev</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Response Time</h3>
+                            <p>Within 24 hours</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="includes/contact_handler.php" method="POST">
                         <div class="form-group">
-                            <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
                             <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
                             <input type="tel" id="phone" name="phone">
+                            <label for="phone">Phone Number</label>
                         </div>
                         <div class="form-group">
-                            <label for="project">Project Type</label>
-                            <select id="project" name="project">
-                                <option value="">Select a service</option>
-                                <option value="new-website">New Website</option>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="custom-website">Custom Website</option>
+                                <option value="ecommerce">E-commerce Store</option>
                                 <option value="redesign">Website Redesign</option>
-                                <option value="ecommerce">Online Store</option>
+                                <option value="seo">SEO Optimization</option>
                                 <option value="maintenance">Website Maintenance</option>
                                 <option value="other">Other</option>
                             </select>
+                            <label for="service">Service Needed</label>
                         </div>
                         <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project, goals, and any specific requirements..." required></textarea>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Project Details</label>
                         </div>
-                        <button type="submit" class="btn btn-primary large">
+                        <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i>
                             <span>Send Message</span>
-                            <small>Free quote within 24 hours</small>
                         </button>
                     </form>
                 </div>
@@ -552,27 +577,39 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-brand">
                     <div class="footer-logo">
                         <span class="logo-text">Cyrus</span>
                         <span class="logo-accent">Wilburn</span>
                     </div>
-                    <p>Professional web developer creating custom websites that convert visitors into customers.</p>
+                    <p>Professional web developer creating websites that drive results.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Custom Web Development</a></li>
-                        <li><a href="#services">Mobile-First Design</a></li>
-                        <li><a href="#services">SEO Optimization</a></li>
-                        <li><a href="#services">SSL & Security</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <div class="footer-contact">
-                        <p><i class="fas fa-phone"></i> (270) 801-9780</p>
-                        <p><i class="fas fa-envelope"></i> cyrus@cyruswilburn.dev</p>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Web Development</a></li>
+                            <li><a href="#services">E-commerce</a></li>
+                            <li><a href="#services">SEO</a></li>
+                            <li><a href="#services">Maintenance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Portfolio</h4>
+                        <ul>
+                            <li><a href="#portfolio">Recent Work</a></li>
+                            <li><a href="http://ambassadorsmmtx.com/" target="_blank">Ambassadors MM</a></li>
+                            <li><a href="nicheport2/" target="_blank">NichePort</a></li>
+                            <li><a href="barber-shop/" target="_blank">Barber Shop</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="tel:2708019780">(270) 801-9780</a></li>
+                            <li><a href="mailto:cyrus@cyruswilburn.dev">cyrus@cyruswilburn.dev</a></li>
+                            <li><a href="#contact">Get Quote</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -583,6 +620,6 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
     </footer>
 
     <!-- JavaScript -->
-    <script src="assets/js/script-new.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
