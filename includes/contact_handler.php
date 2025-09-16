@@ -17,6 +17,43 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// Include database configuration
+$db_config_paths = [
+    __DIR__ . '/../shared-config/database.php',
+    __DIR__ . '/../../shared-config/database.php',
+    __DIR__ . '/../../../shared-config/database.php'
+];
+
+$db_config_loaded = false;
+foreach ($db_config_paths as $path) {
+    if (file_exists($path)) {
+        require_once $path;
+        $db_config_loaded = true;
+        break;
+    }
+}
+
+// Fallback database configuration if shared config not found
+if (!$db_config_loaded) {
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'cyruwjtb_main');
+    define('DB_USER', 'cyruwjtb_admin');
+    define('DB_PASS', 'Pjah6966!$');
+    
+    function getDatabaseConnection($database = null) {
+        try {
+            $db_name = $database ? $database : DB_NAME;
+            $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . $db_name, DB_USER, DB_PASS);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            return $pdo;
+        } catch(PDOException $e) {
+            error_log("Database connection failed: " . $e->getMessage());
+            return false;
+        }
+    }
+}
+
 // Function to sanitize input data
 function sanitizeInput($data) {
     $data = trim($data);
@@ -36,6 +73,72 @@ function validatePhone($phone) {
     $phone = preg_replace('/\D/', '', $phone);
     // Check if it's a valid US phone number (10 digits)
     return strlen($phone) === 10;
+}
+
+// Function to create contact form table if it doesn't exist
+function createContactTable($pdo) {
+    try {
+        $sql = "CREATE TABLE IF NOT EXISTS contact_submissions (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(100) NOT NULL,
+            email VARCHAR(100) NOT NULL,
+            phone VARCHAR(20),
+            service VARCHAR(50),
+            message TEXT NOT NULL,
+            ip_address VARCHAR(45),
+            user_agent TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            status ENUM('new', 'contacted', 'in_progress', 'completed') DEFAULT 'new',
+            notes TEXT
+        )";
+        
+        $pdo->exec($sql);
+        return true;
+    } catch(PDOException $e) {
+        error_log("Failed to create contact_submissions table: " . $e->getMessage());
+        return false;
+    }
+}
+
+// Function to save contact form to database
+function saveToDatabase($formData) {
+    try {
+        $pdo = getDatabaseConnection();
+        if (!$pdo) {
+            return ['success' => false, 'message' => 'Database connection failed'];
+        }
+        
+        // Create table if it doesn't exist
+        if (!createContactTable($pdo)) {
+            return ['success' => false, 'message' => 'Failed to create database table'];
+        }
+        
+        // Prepare insert statement
+        $sql = "INSERT INTO contact_submissions (name, email, phone, service, message, ip_address, user_agent) 
+                VALUES (:name, :email, :phone, :service, :message, :ip_address, :user_agent)";
+        
+        $stmt = $pdo->prepare($sql);
+        
+        // Bind parameters
+        $stmt->bindParam(':name', $formData['name']);
+        $stmt->bindParam(':email', $formData['email']);
+        $stmt->bindParam(':phone', $formData['phone']);
+        $stmt->bindParam(':service', $formData['service']);
+        $stmt->bindParam(':message', $formData['message']);
+        $stmt->bindParam(':ip_address', $_SERVER['REMOTE_ADDR']);
+        $stmt->bindParam(':user_agent', $_SERVER['HTTP_USER_AGENT']);
+        
+        // Execute the statement
+        if ($stmt->execute()) {
+            return ['success' => true, 'message' => 'Contact form saved to database', 'id' => $pdo->lastInsertId()];
+        } else {
+            return ['success' => false, 'message' => 'Failed to save to database'];
+        }
+        
+    } catch(PDOException $e) {
+        error_log("Database error: " . $e->getMessage());
+        return ['success' => false, 'message' => 'Database error occurred'];
+    }
 }
 
 // Function to send email notification
@@ -139,6 +242,7 @@ try {
         'name' => sanitizeInput($_POST['name']),
         'email' => sanitizeInput($_POST['email']),
         'phone' => isset($_POST['phone']) ? sanitizeInput($_POST['phone']) : '',
+        'service' => isset($_POST['service']) ? sanitizeInput($_POST['service']) : '',
         'business' => isset($_POST['business']) ? sanitizeInput($_POST['business']) : '',
         'project' => isset($_POST['project']) ? sanitizeInput($_POST['project']) : '',
         'budget' => isset($_POST['budget']) ? sanitizeInput($_POST['budget']) : '',
@@ -200,6 +304,13 @@ try {
     // Save rate limit data
     file_put_contents($rateLimitFile, json_encode($rateLimitData), LOCK_EX);
     
+    // Save to database
+    $dbResult = saveToDatabase($formData);
+    if (!$dbResult['success']) {
+        error_log("Database save failed: " . $dbResult['message']);
+        // Continue processing even if database save fails
+    }
+    
     // Send email notification
     $emailSent = sendEmailNotification($formData);
     
@@ -210,9 +321,14 @@ try {
     logSubmission($formData);
     
     // Prepare success response
-    if ($emailSent) {
+    if ($emailSent || $dbResult['success']) {
         $response['success'] = true;
         $response['message'] = 'Thank you for your message! I\'ll get back to you within 24 hours.';
+        
+        // Add database info to response for debugging
+        if ($dbResult['success']) {
+            $response['database_id'] = $dbResult['id'];
+        }
         
         // Set success message in session for non-AJAX requests
         $_SESSION['contact_success'] = $response['message'];

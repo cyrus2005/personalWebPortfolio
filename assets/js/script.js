@@ -7,15 +7,50 @@ document.addEventListener('DOMContentLoaded', function() {
         testIcon.className = 'fas fa-rocket';
         testIcon.style.position = 'absolute';
         testIcon.style.left = '-9999px';
+        testIcon.style.visibility = 'hidden';
         document.body.appendChild(testIcon);
         
         const computedStyle = window.getComputedStyle(testIcon, '::before');
         const content = computedStyle.getPropertyValue('content');
+        const fontFamily = computedStyle.getPropertyValue('font-family');
         
-        // If Font Awesome didn't load, add fallback styles
-        if (!content || content === 'none' || content === '""') {
-            console.log('Font Awesome not loaded, using fallbacks');
+        console.log('Font Awesome check:', {
+            content: content,
+            fontFamily: fontFamily,
+            hasContent: content && content !== 'none' && content !== '""'
+        });
+        
+        // If Font Awesome didn't load properly, add fallback styles
+        if (!content || content === 'none' || content === '""' || !fontFamily.includes('Font Awesome')) {
+            console.log('Font Awesome not loaded properly, using fallbacks');
             document.body.classList.add('fa-fallback');
+            
+            // Force fallback styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .fas, .far, .fab, .fa {
+                    font-family: Arial, sans-serif !important;
+                }
+                .fa-rocket::before { content: "🚀"; }
+                .fa-phone::before { content: "📞"; }
+                .fa-star::before { content: "⭐"; }
+                .fa-external-link-alt::before { content: "↗"; }
+                .fa-check::before { content: "✓"; }
+                .fa-check-circle::before { content: "✓"; }
+                .fa-code::before { content: "</>"; }
+                .fa-mobile-alt::before { content: "📱"; }
+                .fa-shopping-cart::before { content: "🛒"; }
+                .fa-search::before { content: "🔍"; }
+                .fa-shield-alt::before { content: "🛡"; }
+                .fa-paper-plane::before { content: "✈"; }
+                .fa-envelope::before { content: "✉"; }
+                .fa-clock::before { content: "🕐"; }
+                .fa-spinner::before { content: "⟳"; }
+                .fa-times::before { content: "✕"; }
+                .fa-info-circle::before { content: "ℹ"; }
+                .fa-exclamation-circle::before { content: "⚠"; }
+            `;
+            document.head.appendChild(style);
         }
         
         document.body.removeChild(testIcon);

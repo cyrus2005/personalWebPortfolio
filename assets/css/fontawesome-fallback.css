@@ -1,0 +1,41 @@
+/* Font Awesome Fallback CSS - Essential Icons Only */
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("data:font/woff2;base64,") format("woff2");
+}
+
+.fas, .far, .fab, .fa {
+  font-family: "Font Awesome 6 Free", "FontAwesome", Arial, sans-serif !important;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
+
+/* Essential icons used on the site */
+.fa-rocket::before { content: "\f135"; }
+.fa-phone::before { content: "\f095"; }
+.fa-star::before { content: "\f005"; }
+.fa-external-link-alt::before { content: "\f35d"; }
+.fa-check::before { content: "\f00c"; }
+.fa-check-circle::before { content: "\f058"; }
+.fa-code::before { content: "\f121"; }
+.fa-mobile-alt::before { content: "\f3cd"; }
+.fa-shopping-cart::before { content: "\f07a"; }
+.fa-search::before { content: "\f002"; }
+.fa-shield-alt::before { content: "\f3ed"; }
+.fa-paper-plane::before { content: "\f1d8"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-clock::before { content: "\f017"; }
+.fa-spinner::before { content: "\f110"; }
+.fa-times::before { content: "\f00d"; }
+.fa-info-circle::before { content: "\f05a"; }
+.fa-exclamation-circle::before { content: "\f06a"; }
