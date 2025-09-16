@@ -19,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Include database configuration
 $db_config_paths = [
-    __DIR__ . '/../shared-config/database.php',
+    __DIR__ . '/../local-config/database.php',  // Local development first
+    __DIR__ . '/../shared-config/database.php', // Production config
     __DIR__ . '/../../shared-config/database.php',
     __DIR__ . '/../../../shared-config/database.php'
 ];
