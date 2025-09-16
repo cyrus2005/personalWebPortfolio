@@ -250,7 +250,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <!-- Ambassadors MM - Featured -->
                 <div class="portfolio-card featured">
                     <div class="card-image">
-                        <img src="assets/images/ambassadors-preview.svg" alt="Ambassadors MM Website Preview" class="project-image">
+                        <img src="assets/images/ambassadorsPrev.PNG" alt="Ambassadors MM Website Preview" class="project-image">
                         <div class="card-overlay">
                             <a href="http://ambassadorsmmtx.com/" target="_blank" class="preview-btn">
                                 <i class="fas fa-external-link-alt"></i>
@@ -274,7 +274,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <!-- NichePort Auto Repair -->
                 <div class="portfolio-card">
                     <div class="card-image">
-                        <img src="assets/images/nicheport-preview.svg" alt="NichePort Auto Repair Website Preview" class="project-image">
+                        <img src="assets/images/EliteCollisionPrev.PNG" alt="NichePort Auto Repair Website Preview" class="project-image">
                         <div class="card-overlay">
                             <a href="nicheport2/" target="_blank" class="preview-btn">
                                 <i class="fas fa-external-link-alt"></i>
@@ -320,7 +320,7 @@ $page_keywords = "Cyrus Wilburn, web developer, custom websites, business websit
                 <!-- Small Cafe -->
                 <div class="portfolio-card">
                     <div class="card-image">
-                        <img src="assets/images/cafe-preview.svg" alt="Brew & Bite Cafe Website Preview" class="project-image">
+                        <img src="assets/images/brewnbiteprev.PNG" alt="Brew & Bite Cafe Website Preview" class="project-image">
                         <div class="card-overlay">
                             <a href="small-cafe/" target="_blank" class="preview-btn">
                                 <i class="fas fa-external-link-alt"></i>

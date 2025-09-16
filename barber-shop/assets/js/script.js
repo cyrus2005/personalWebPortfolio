@@ -1,73 +1,35 @@
-// Blade & Fade Barbers - Interactive JavaScript
-
+// Blade & Fade Barbers - Modern JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
-    initNavigation();
-    initSmoothScrolling();
-    initForms();
-    initModal();
-    initAnimations();
-    initMobileMenu();
-});
-
-// Navigation functionality
-function initNavigation() {
-    const navbar = document.querySelector('.navbar');
+    
+    // Mobile Navigation Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+    
+    // Close mobile menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-link');
-    
-    // Add scroll effect to navbar - disabled to keep white background
-    // window.addEventListener('scroll', function() {
-    //     if (window.scrollY > 100) {
-    //         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    //         navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-    //     } else {
-    //         navbar.style.background = 'rgba(255, 255, 255, 1)';
-    //         navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
-    //     }
-    // });
-    
-    // Update active nav link based on scroll position
-    window.addEventListener('scroll', updateActiveNavLink);
-    
-    // Set initial active link
-    updateActiveNavLink();
-}
-
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-    
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
     });
-}
-
-// Smooth scrolling for navigation links
-function initSmoothScrolling() {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
     
+    // Smooth Scrolling for Navigation Links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
-                
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -75,183 +37,319 @@ function initSmoothScrolling() {
             }
         });
     });
-}
-
-// Form handling
-function initForms() {
-    // Newsletter form
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', handleNewsletterSubmit);
-    }
     
-    // Contact form
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactSubmit);
-    }
+    // Active Navigation Link
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-link');
     
-    // Booking form
-    const bookingForm = document.getElementById('bookingForm');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', handleBookingSubmit);
-    }
-}
-
-function handleNewsletterSubmit(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
-    
-    // Show loading state
-    showLoading(submitBtn);
-    
-    fetch('includes/newsletter_handler.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        hideLoading(submitBtn);
-        
-        if (data.success) {
-            showMessage('success', data.message);
-            form.reset();
-        } else {
-            showMessage('error', data.message);
-        }
-    })
-    .catch(error => {
-        hideLoading(submitBtn);
-        showMessage('error', 'An error occurred. Please try again.');
-        console.error('Error:', error);
-    });
-}
-
-function handleContactSubmit(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
-    
-    // Show loading state
-    showLoading(submitBtn);
-    
-    fetch('includes/contact_handler.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        hideLoading(submitBtn);
-        
-        if (data.success) {
-            showMessage('success', data.message);
-            form.reset();
-        } else {
-            showMessage('error', data.message);
-        }
-    })
-    .catch(error => {
-        hideLoading(submitBtn);
-        showMessage('error', 'An error occurred. Please try again.');
-        console.error('Error:', error);
-    });
-}
-
-function handleBookingSubmit(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
-    
-    // Show loading state
-    showLoading(submitBtn);
-    
-    fetch('includes/booking_handler.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        hideLoading(submitBtn);
-        
-        if (data.success) {
-            showMessage('success', data.message);
-            form.reset();
-            closeModal();
-        } else {
-            showMessage('error', data.message);
-        }
-    })
-    .catch(error => {
-        hideLoading(submitBtn);
-        showMessage('error', 'An error occurred. Please try again.');
-        console.error('Error:', error);
-    });
-}
-
-// Modal functionality
-function initModal() {
-    const modal = document.getElementById('bookingModal');
-    const bookButtons = document.querySelectorAll('.book-btn, a[href="#book"]');
-    const closeBtn = document.querySelector('.close');
-    
-    // Open modal
-    bookButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openModal();
+    function updateActiveNav() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
         });
-    });
-    
-    // Close modal
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-    
-    // Close modal when clicking outside
-    if (modal) {
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeModal();
+        
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${current}`) {
+                item.classList.add('active');
             }
         });
     }
     
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            closeModal();
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            if (!data.name || !data.email || !data.message) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Submit form
+            fetch('includes/contact_handler.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
+                    this.reset();
+                } else {
+                    showNotification(data.message || 'There was an error sending your message. Please try again.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('There was an error sending your message. Please try calling us directly.', 'error');
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
+    
+    // Booking Form Handling
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            if (!data.name || !data.email || !data.phone || !data.service || !data.date || !data.time) {
+                showNotification('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Phone validation
+            const phoneRegex = /^[\d\s\-\(\)\+]+$/;
+            if (!phoneRegex.test(data.phone)) {
+                showNotification('Please enter a valid phone number.', 'error');
+                return;
+            }
+            
+            // Date validation (must be today or future)
+            const selectedDate = new Date(data.date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (selectedDate < today) {
+                showNotification('Please select a future date.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
+            submitBtn.disabled = true;
+            
+            // Submit form
+            fetch('includes/booking_handler.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification('Appointment booked successfully! We\'ll confirm with you shortly.', 'success');
+                    this.reset();
+                    closeBookingModal();
+                } else {
+                    showNotification(data.message || 'There was an error booking your appointment. Please try again.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('There was an error booking your appointment. Please call us directly.', 'error');
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
+    
+    // Phone number formatting
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+                value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+            }
+            this.value = value;
+        });
+    });
+    
+    // Set minimum date for booking form
+    const dateInput = document.getElementById('booking_date');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+    }
+    
+    // Notification System
+    function showNotification(message, type = 'info') {
+        // Remove existing notifications
+        const existingNotifications = document.querySelectorAll('.notification');
+        existingNotifications.forEach(notification => notification.remove());
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+                <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+        
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? '#10B981' : type === 'error' ? '#EF4444' : '#3B82F6'};
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            max-width: 400px;
+            animation: slideIn 0.3s ease-out;
+        `;
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => notification.remove(), 300);
+            }
+        }, 5000);
+    }
+    
+    // Add CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        .notification-content {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            margin-left: auto;
+        }
+        
+        .notification-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.service-card, .gallery-item, .about-content, .contact-content');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+    
+    // Parallax effect for hero image
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroImage = document.querySelector('.hero-img');
+        
+        if (heroImage) {
+            const speed = 0.5;
+            heroImage.style.transform = `translateY(${scrolled * speed}px)`;
         }
     });
-}
+    
+    console.log('Blade & Fade Barbers - JavaScript loaded successfully!');
+});
 
-function openModal() {
+// Modal Functions
+function openBookingModal() {
     const modal = document.getElementById('bookingModal');
     if (modal) {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-        
-        // Set minimum date to today
-        const dateInput = modal.querySelector('input[name="date"]');
-        if (dateInput) {
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min', today);
-        }
     }
 }
 
-// Global function for onclick attributes
-function openBookingModal() {
-    openModal();
-}
-
-function closeModal() {
+function closeBookingModal() {
     const modal = document.getElementById('bookingModal');
     if (modal) {
         modal.style.display = 'none';
@@ -259,202 +357,18 @@ function closeModal() {
     }
 }
 
-// Mobile menu functionality
-function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-}
-
-// Animation on scroll
-function initAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.service-card, .gallery-item, .contact-item, .stat');
-    animateElements.forEach(el => {
-        observer.observe(el);
-    });
-}
-
-// Utility functions
-function showLoading(button) {
-    button.disabled = true;
-    button.classList.add('loading');
-    button.textContent = 'Loading...';
-}
-
-function hideLoading(button) {
-    button.disabled = false;
-    button.classList.remove('loading');
-    button.textContent = button.getAttribute('data-original-text') || 'Submit';
-}
-
-function showMessage(type, message) {
-    // Remove existing messages
-    const existingMessages = document.querySelectorAll('.message');
-    existingMessages.forEach(msg => msg.remove());
-    
-    // Create new message
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${type}`;
-    messageDiv.textContent = message;
-    
-    // Insert message at the top of the page
-    const body = document.body;
-    body.insertBefore(messageDiv, body.firstChild);
-    
-    // Auto-remove message after 5 seconds
-    setTimeout(() => {
-        messageDiv.remove();
-    }, 5000);
-    
-    // Scroll to top to show message
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-// Gallery lightbox functionality (for future use)
-function initGallery() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Future implementation for lightbox
-            console.log('Gallery item clicked');
-        });
-    });
-}
-
-// Service card hover effects
-function initServiceCards() {
-    const serviceCards = document.querySelectorAll('.service-card');
-    
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-}
-
-// Initialize additional features
-document.addEventListener('DOMContentLoaded', function() {
-    initGallery();
-    initServiceCards();
-});
-
-// Form validation helpers
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-function validatePhone(phone) {
-    const re = /^[\+]?[1-9][\d]{0,15}$/;
-    return re.test(phone.replace(/[\s\-\(\)]/g, ''));
-}
-
-// Add real-time validation to forms
-document.addEventListener('DOMContentLoaded', function() {
-    const emailInputs = document.querySelectorAll('input[type="email"]');
-    const phoneInputs = document.querySelectorAll('input[type="tel"]');
-    
-    emailInputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.value && !validateEmail(this.value)) {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '';
-            }
-        });
-    });
-    
-    phoneInputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.value && !validatePhone(this.value)) {
-                this.style.borderColor = '#dc3545';
-            } else {
-                this.style.borderColor = '';
-            }
-        });
-    });
-});
-
-// Smooth reveal animation for hero section
-document.addEventListener('DOMContentLoaded', function() {
-    const heroContent = document.querySelector('.hero-content');
-    const heroImage = document.querySelector('.hero-image');
-    
-    if (heroContent) {
-        setTimeout(() => {
-            heroContent.classList.add('fade-in-up');
-        }, 300);
-    }
-    
-    if (heroImage) {
-        setTimeout(() => {
-            heroImage.classList.add('fade-in');
-        }, 600);
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('bookingModal');
+    if (event.target === modal) {
+        closeBookingModal();
     }
 });
 
-// Parallax effect for hero section - disabled for video
-// window.addEventListener('scroll', function() {
-//     const scrolled = window.pageYOffset;
-//     const heroImage = document.querySelector('.hero-image');
-//     
-//     if (heroImage && scrolled < window.innerHeight) {
-//         heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
-//     }
-// });
-
-// Add click tracking for analytics (placeholder)
-function trackClick(element, action) {
-    // Future implementation for analytics
-    console.log(`Tracked: ${action} on ${element}`);
-}
-
-// Add event listeners for tracking
-document.addEventListener('DOMContentLoaded', function() {
-    const trackableElements = document.querySelectorAll('.book-btn, .service-card, .nav-link');
-    
-    trackableElements.forEach(element => {
-        element.addEventListener('click', function() {
-            const action = this.classList.contains('book-btn') ? 'booking_click' : 
-                          this.classList.contains('service-card') ? 'service_view' : 'navigation_click';
-            trackClick(this, action);
-        });
-    });
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeBookingModal();
+    }
+});
 });
