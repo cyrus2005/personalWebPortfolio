@@ -46,64 +46,6 @@
     box-sizing: border-box;
 }
 
-/* Font Awesome Fallback */
-.fas, .far, .fab, .fa {
-    font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "FontAwesome", sans-serif !important;
-    font-weight: 900;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-}
-
-/* Ensure icons are visible even if Font Awesome fails */
-.fa-rocket::before { content: "🚀"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-phone::before { content: "📞"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-star::before { content: "⭐"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-external-link-alt::before { content: "↗"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-check::before { content: "✓"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-check-circle::before { content: "✓"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-code::before { content: "</>"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-mobile-alt::before { content: "📱"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-shopping-cart::before { content: "🛒"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-search::before { content: "🔍"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-shield-alt::before { content: "🛡"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-paper-plane::before { content: "✈"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-envelope::before { content: "✉"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-clock::before { content: "🕐"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-spinner::before { content: "⟳"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-times::before { content: "✕"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-info-circle::before { content: "ℹ"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-.fa-exclamation-circle::before { content: "⚠"; font-family: "Font Awesome 6 Free", "FontAwesome", sans-serif; }
-
-/* Fallback state when Font Awesome fails to load */
-.fa-fallback .fas, .fa-fallback .far, .fa-fallback .fab, .fa-fallback .fa {
-    font-family: Arial, sans-serif !important;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.fa-fallback .fa-rocket::before { content: "🚀"; }
-.fa-fallback .fa-phone::before { content: "📞"; }
-.fa-fallback .fa-star::before { content: "⭐"; }
-.fa-fallback .fa-external-link-alt::before { content: "↗"; }
-.fa-fallback .fa-check::before { content: "✓"; }
-.fa-fallback .fa-check-circle::before { content: "✓"; }
-.fa-fallback .fa-code::before { content: "</>"; }
-.fa-fallback .fa-mobile-alt::before { content: "📱"; }
-.fa-fallback .fa-shopping-cart::before { content: "🛒"; }
-.fa-fallback .fa-search::before { content: "🔍"; }
-.fa-fallback .fa-shield-alt::before { content: "🛡"; }
-.fa-fallback .fa-paper-plane::before { content: "✈"; }
-.fa-fallback .fa-envelope::before { content: "✉"; }
-.fa-fallback .fa-clock::before { content: "🕐"; }
-.fa-fallback .fa-spinner::before { content: "⟳"; }
-.fa-fallback .fa-times::before { content: "✕"; }
-.fa-fallback .fa-info-circle::before { content: "ℹ"; }
-.fa-fallback .fa-exclamation-circle::before { content: "⚠"; }
 
 html {
     scroll-behavior: smooth;

@@ -1,63 +1,6 @@
 // Modern JavaScript for Cyrus Wilburn Portfolio
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Check if Font Awesome loaded properly
-    function checkFontAwesome() {
-        const testIcon = document.createElement('i');
-        testIcon.className = 'fas fa-rocket';
-        testIcon.style.position = 'absolute';
-        testIcon.style.left = '-9999px';
-        testIcon.style.visibility = 'hidden';
-        document.body.appendChild(testIcon);
-        
-        const computedStyle = window.getComputedStyle(testIcon, '::before');
-        const content = computedStyle.getPropertyValue('content');
-        const fontFamily = computedStyle.getPropertyValue('font-family');
-        
-        console.log('Font Awesome check:', {
-            content: content,
-            fontFamily: fontFamily,
-            hasContent: content && content !== 'none' && content !== '""'
-        });
-        
-        // If Font Awesome didn't load properly, add fallback styles
-        if (!content || content === 'none' || content === '""' || !fontFamily.includes('Font Awesome')) {
-            console.log('Font Awesome not loaded properly, using fallbacks');
-            document.body.classList.add('fa-fallback');
-            
-            // Force fallback styles
-            const style = document.createElement('style');
-            style.textContent = `
-                .fas, .far, .fab, .fa {
-                    font-family: Arial, sans-serif !important;
-                }
-                .fa-rocket::before { content: "🚀"; }
-                .fa-phone::before { content: "📞"; }
-                .fa-star::before { content: "⭐"; }
-                .fa-external-link-alt::before { content: "↗"; }
-                .fa-check::before { content: "✓"; }
-                .fa-check-circle::before { content: "✓"; }
-                .fa-code::before { content: "</>"; }
-                .fa-mobile-alt::before { content: "📱"; }
-                .fa-shopping-cart::before { content: "🛒"; }
-                .fa-search::before { content: "🔍"; }
-                .fa-shield-alt::before { content: "🛡"; }
-                .fa-paper-plane::before { content: "✈"; }
-                .fa-envelope::before { content: "✉"; }
-                .fa-clock::before { content: "🕐"; }
-                .fa-spinner::before { content: "⟳"; }
-                .fa-times::before { content: "✕"; }
-                .fa-info-circle::before { content: "ℹ"; }
-                .fa-exclamation-circle::before { content: "⚠"; }
-            `;
-            document.head.appendChild(style);
-        }
-        
-        document.body.removeChild(testIcon);
-    }
-    
-    // Run check after a short delay to allow Font Awesome to load
-    setTimeout(checkFontAwesome, 1000);
     
     // Mobile Navigation Toggle
     const hamburger = document.getElementById('hamburger');
@@ -382,19 +325,5 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(loadingStyle);
     
-    console.log('Cyrus Wilburn Portfolio - JavaScript loaded successfully!');
-    
-    // Debug: Check if icons are visible
-    setTimeout(() => {
-        const icons = document.querySelectorAll('.fas, .far, .fab, .fa');
-        console.log(`Found ${icons.length} Font Awesome icons on page`);
-        
-        icons.forEach((icon, index) => {
-            if (index < 5) { // Check first 5 icons
-                const computedStyle = window.getComputedStyle(icon, '::before');
-                const content = computedStyle.getPropertyValue('content');
-                console.log(`Icon ${index + 1} (${icon.className}): content = "${content}"`);
-            }
-        });
-    }, 2000);
+        console.log('Cyrus Wilburn Portfolio - JavaScript loaded successfully!');
 });
