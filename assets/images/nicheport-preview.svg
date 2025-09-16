@@ -3,7 +3,7 @@
   <rect width="400" height="250" fill="#f8f9fa"/>
   
   <!-- Header -->
-  <rect width="400" height="60" fill="#8B5B3F"/>
+  <rect width="400" height="60" fill="#800020"/>
   <text x="20" y="35" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="bold">NichePort Auto Repair</text>
   <text x="300" y="35" fill="white" font-family="Arial, sans-serif" font-size="14">(555) 123-4567</text>
   
@@ -19,12 +19,12 @@
   <rect y="100" width="400" height="100" fill="white"/>
   <text x="20" y="130" fill="#333" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Professional Auto Repair</text>
   <text x="20" y="155" fill="#666" font-family="Arial, sans-serif" font-size="14">Expert mechanics • Quality service • Fair prices</text>
-  <rect x="20" y="165" width="120" height="30" fill="#8B5B3F" rx="5"/>
+  <rect x="20" y="165" width="120" height="30" fill="#800020" rx="5"/>
   <text x="50" y="185" fill="white" font-family="Arial, sans-serif" font-size="12">Get Free Quote</text>
   
   <!-- Car Icon -->
   <rect x="300" y="120" width="80" height="40" fill="#e9ecef" rx="5"/>
-  <rect x="310" y="130" width="60" height="20" fill="#8B5B3F" rx="3"/>
+  <rect x="310" y="130" width="60" height="20" fill="#800020" rx="3"/>
   <circle cx="320" cy="150" r="8" fill="#333"/>
   <circle cx="360" cy="150" r="8" fill="#333"/>
   

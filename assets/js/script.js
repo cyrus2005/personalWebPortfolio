@@ -271,6 +271,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('loaded');
     });
     
+    // Testimonial card click effect
+    const floatingCard = document.querySelector('.floating-card');
+    if (floatingCard) {
+        floatingCard.addEventListener('click', function() {
+            this.style.animation = 'none';
+            this.offsetHeight; // Trigger reflow
+            this.style.animation = 'slideInUp 0.6s ease-out forwards';
+        });
+    }
+    
     // Add CSS for loading state
     const loadingStyle = document.createElement('style');
     loadingStyle.textContent = `

@@ -1,12 +1,12 @@
 /* Cyrus Wilburn Portfolio - Modern Professional Design */
 
 :root {
-    /* Color Palette */
-    --maroon-primary: #8B5B3F;
-    --maroon-dark: #6B4423;
-    --maroon-light: #A67C52;
-    --orange-accent: #F97316;
-    --orange-light: #FB923C;
+    /* Color Palette - Maroon Red Theme */
+    --maroon-primary: #800020;
+    --maroon-dark: #5C0016;
+    --maroon-light: #A3002A;
+    --orange-accent: #DC2626;
+    --orange-light: #EF4444;
     --gray-900: #111827;
     --gray-800: #1F2937;
     --gray-700: #374151;
@@ -45,6 +45,34 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Font Awesome Fallback */
+.fas, .far, .fab, .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "FontAwesome", sans-serif !important;
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fallback for missing icons */
+.fa-rocket::before { content: "🚀"; }
+.fa-phone::before { content: "📞"; }
+.fa-star::before { content: "⭐"; }
+.fa-external-link-alt::before { content: "↗"; }
+.fa-check::before { content: "✓"; }
+.fa-check-circle::before { content: "✓"; }
+.fa-code::before { content: "</>"; }
+.fa-mobile-alt::before { content: "📱"; }
+.fa-shopping-cart::before { content: "🛒"; }
+.fa-search::before { content: "🔍"; }
+.fa-shield-alt::before { content: "🛡"; }
+.fa-paper-plane::before { content: "✈"; }
+.fa-envelope::before { content: "✉"; }
+.fa-clock::before { content: "🕐"; }
 
 html {
     scroll-behavior: smooth;
@@ -317,6 +345,21 @@ p {
     50% { transform: translateY(-20px) rotate(180deg); }
 }
 
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 .hero-container {
     position: relative;
     z-index: 2;
@@ -407,7 +450,16 @@ p {
     padding: 1.5rem;
     box-shadow: var(--shadow-xl);
     max-width: 300px;
-    animation: float 4s ease-in-out infinite;
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+    animation: slideInUp 1s ease-out 0.5s forwards;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .card-header {
