@@ -8,16 +8,17 @@ require_once 'includes/functions.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blade & Fade Barbers - Premium Men's Grooming & Styling</title>
-    <meta name="description" content="Professional barber shop specializing in modern cuts, fades, beard grooming, and premium styling services. Book your appointment online today.">
-    <meta name="keywords" content="barber shop, men's haircut, fade, beard trim, grooming, styling, appointment booking">
+    <title>Blade & Fade Barbers - #1 Men's Grooming in Your City | Book Online Today</title>
+    <meta name="description" content="⭐ 4.9/5 Rated Barber Shop - Professional haircuts, fades, beard trims & hot shaves. Walk-ins welcome! Book online or call (555) 123-4567. Open Mon-Sat.">
+    <meta name="keywords" content="barber shop, men's haircut, fade, beard trim, hot shave, grooming, your city, walk-ins welcome, book online">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Blade & Fade Barbers - Premium Men's Grooming">
-    <meta property="og:description" content="Professional barber shop specializing in modern cuts, fades, and grooming services">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blade & Fade Barbers - #1 Men's Grooming in Your City">
+    <meta property="og:description" content="⭐ 4.9/5 Rated - Professional haircuts, fades, beard trims & hot shaves. Book online today!">
+    <meta property="og:type" content="business.business">
     <meta property="og:url" content="https://cyruswilburn.dev/barber-shop/">
     <meta property="og:image" content="https://cyruswilburn.dev/barber-shop/media/completeLook.jpg">
+    <meta property="og:site_name" content="Blade & Fade Barbers">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
@@ -25,15 +26,13 @@ require_once 'includes/functions.php';
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Local Fonts - No External Dependencies -->
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome with CSP compliance -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Structured Data -->
+    <!-- Structured Data for Local Business -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -50,8 +49,18 @@ require_once 'includes/functions.php';
             "postalCode": "12345",
             "addressCountry": "US"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.7128",
+            "longitude": "-74.0060"
+        },
         "openingHours": "Mo-Fr 09:00-18:00,Sa 09:00-16:00",
         "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127"
+        },
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Barber Services",
@@ -61,24 +70,30 @@ require_once 'includes/functions.php';
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Haircut & Style",
-                        "description": "Professional haircut and styling"
-                    }
+                        "description": "Professional haircut and styling - $25"
+                    },
+                    "price": "25",
+                    "priceCurrency": "USD"
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Beard Trim",
-                        "description": "Professional beard trimming and shaping"
-                    }
+                        "description": "Expert beard trimming and shaping - $15"
+                    },
+                    "price": "15",
+                    "priceCurrency": "USD"
                 },
                 {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Hot Shave",
-                        "description": "Traditional hot towel shave"
-                    }
+                        "description": "Traditional hot towel shave - $30"
+                    },
+                    "price": "30",
+                    "priceCurrency": "USD"
                 }
             ]
         }
@@ -86,25 +101,56 @@ require_once 'includes/functions.php';
     </script>
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <span class="phone">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:5551234567">(555) 123-4567</a>
+                    </span>
+                    <span class="hours">
+                        <i class="fas fa-clock"></i>
+                        Mon-Fri: 9AM-6PM | Sat: 9AM-4PM
+                    </span>
+                </div>
+                <div class="top-bar-right">
+                    <span class="rating">
+                        <i class="fas fa-star"></i>
+                        <strong>4.9/5</strong> (127 reviews)
+                    </span>
+                    <span class="walk-ins">
+                        <i class="fas fa-walking"></i>
+                        Walk-ins Welcome!
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="media/ClipperLogo.png" alt="Blade & Fade Barbers" class="clipper-logo">
-                <span class="logo-text">Blade & Fade</span>
+                <div class="logo-text">
+                    <span class="logo-main">Blade & Fade</span>
+                    <span class="logo-sub">Barbers</span>
+                </div>
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
                     <a href="#home" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services & Prices</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#gallery" class="nav-link">Our Work</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#reviews" class="nav-link">Reviews</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
@@ -112,7 +158,7 @@ require_once 'includes/functions.php';
                 <li class="nav-item">
                     <button class="nav-link book-btn" onclick="openBookingModal()">
                         <i class="fas fa-calendar-alt"></i>
-                        Book Now
+                        Book Online
                     </button>
                 </li>
             </ul>
@@ -131,88 +177,63 @@ require_once 'includes/functions.php';
         </div>
         <div class="hero-content">
             <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>#1 Rated Barber Shop in Your City</span>
+                </div>
                 <h1 class="hero-title">
-                    Premium Men's
+                    Professional Men's
                     <span class="title-highlight">Grooming</span>
+                    <br>That Gets You Noticed
                 </h1>
                 <p class="hero-description">
-                    Professional barbering services with modern techniques and traditional craftsmanship. 
-                    From classic cuts to contemporary fades, we deliver the perfect look for every gentleman.
+                    Walk-ins welcome! Expert barbers delivering the perfect cut, fade, or beard trim. 
+                    <strong>Book online for 10% off your first visit</strong> or call (555) 123-4567.
                 </p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="openBookingModal()">
-                        <i class="fas fa-calendar-alt"></i>
-                        Book Appointment
+                <div class="hero-cta">
+                    <button class="btn btn-primary large" onclick="openBookingModal()">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Online - 10% Off First Visit
                     </button>
-                    <a href="#services" class="btn btn-secondary">
-                        <i class="fas fa-scissors"></i>
-                        View Services
+                    <a href="tel:5551234567" class="btn btn-secondary large">
+                        <i class="fas fa-phone"></i>
+                        Call (555) 123-4567
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Happy Clients</span>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Walk-ins Welcome</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Licensed Professionals</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfaction</span>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Premium Products</span>
                     </div>
                 </div>
             </div>
             <div class="hero-image">
                 <img src="media/completeLook.jpg" alt="Professional Barber at Work" class="hero-img">
-                <div class="floating-badge">
-                    <i class="fas fa-star"></i>
-                    <span>5.0 Rating</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">About Us</span>
-                <h2 class="section-title">Crafting Perfect Looks Since 2019</h2>
-                <p class="section-description">
-                    We combine traditional barbering techniques with modern styling trends to deliver exceptional grooming experiences.
-                </p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Our Story</h3>
-                    <p>
-                        Blade & Fade Barbers was founded with a simple mission: to provide men with the highest quality 
-                        grooming services in a comfortable, professional environment. Our skilled barbers are passionate 
-                        about their craft and stay up-to-date with the latest trends and techniques.
-                    </p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Licensed Professionals</span>
+                <div class="floating-cards">
+                    <div class="floating-card testimonial">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Premium Products</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Sanitized Equipment</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Walk-ins Welcome</span>
-                        </div>
+                        <p>"Best fade I've ever had! These guys know their stuff."</p>
+                        <div class="author">- Mike R.</div>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="media/classicCut.jfif" alt="Professional Barber Services" class="about-img">
+                    <div class="floating-card price">
+                        <div class="price-label">Starting at</div>
+                        <div class="price-amount">$25</div>
+                        <div class="price-desc">Haircut & Style</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -223,59 +244,85 @@ require_once 'includes/functions.php';
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">Our Services</span>
-                <h2 class="section-title">Premium Grooming Services</h2>
+                <h2 class="section-title">Professional Grooming Services</h2>
                 <p class="section-description">
-                    From classic cuts to modern fades, we offer a full range of professional grooming services.
+                    Expert barbers delivering the perfect look for every gentleman. Walk-ins welcome!
                 </p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card featured">
                     <div class="service-icon">
                         <i class="fas fa-cut"></i>
                     </div>
                     <h3>Haircut & Style</h3>
-                    <p>Professional haircuts tailored to your face shape and personal style preferences.</p>
+                    <p>Professional haircut tailored to your face shape and style preferences</p>
                     <div class="service-price">$25</div>
+                    <div class="service-time"><i class="fas fa-clock"></i> 30-45 min</div>
+                    <button class="btn btn-outline" onclick="openBookingModal()">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <h3>Beard Trim</h3>
-                    <p>Expert beard trimming and shaping to maintain your perfect facial hair style.</p>
+                    <p>Expert beard trimming and shaping to maintain your perfect look</p>
                     <div class="service-price">$15</div>
+                    <div class="service-time"><i class="fas fa-clock"></i> 20-30 min</div>
+                    <button class="btn btn-outline" onclick="openBookingModal()">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-fire"></i>
                     </div>
                     <h3>Hot Shave</h3>
-                    <p>Traditional hot towel shave with premium products for the ultimate grooming experience.</p>
+                    <p>Traditional hot towel shave with premium products</p>
                     <div class="service-price">$30</div>
+                    <div class="service-time"><i class="fas fa-clock"></i> 45-60 min</div>
+                    <button class="btn btn-outline" onclick="openBookingModal()">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-magic"></i>
                     </div>
                     <h3>Fade & Design</h3>
-                    <p>Modern fade cuts and creative designs for a contemporary, stylish look.</p>
+                    <p>Modern fade cuts and creative designs for a contemporary look</p>
                     <div class="service-price">$35</div>
+                    <div class="service-time"><i class="fas fa-clock"></i> 45-60 min</div>
+                    <button class="btn btn-outline" onclick="openBookingModal()">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-spa"></i>
                     </div>
                     <h3>Complete Grooming</h3>
-                    <p>Full service including haircut, beard trim, and styling for the complete gentleman's experience.</p>
+                    <p>Haircut + Beard Trim + Styling for the complete gentleman's experience</p>
                     <div class="service-price">$45</div>
+                    <div class="service-time"><i class="fas fa-clock"></i> 60-75 min</div>
+                    <button class="btn btn-outline" onclick="openBookingModal()">Book Now</button>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-gem"></i>
                     </div>
                     <h3>Premium Package</h3>
-                    <p>Our most comprehensive service including all treatments plus premium products and styling.</p>
+                    <p>Complete grooming + hot shave + premium products + styling</p>
                     <div class="service-price">$60</div>
+                    <div class="service-time"><i class="fas fa-clock"></i> 90-120 min</div>
+                    <button class="btn btn-outline" onclick="openBookingModal()">Book Now</button>
+                </div>
+            </div>
+            <div class="services-cta">
+                <h3>Ready for Your Perfect Cut?</h3>
+                <p>Walk-ins welcome or book online for guaranteed appointment time</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary large" onclick="openBookingModal()">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Online Now
+                    </button>
+                    <a href="tel:5551234567" class="btn btn-secondary large">
+                        <i class="fas fa-phone"></i>
+                        Call (555) 123-4567
+                    </a>
                 </div>
             </div>
         </div>
@@ -286,9 +333,9 @@ require_once 'includes/functions.php';
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">Our Work</span>
-                <h2 class="section-title">Perfect Cuts Gallery</h2>
+                <h2 class="section-title">See Our Perfect Cuts</h2>
                 <p class="section-description">
-                    See the quality of our work through our portfolio of satisfied clients.
+                    Real results from our expert barbers. Every cut is crafted with precision and care.
                 </p>
             </div>
             <div class="gallery-grid">
@@ -296,44 +343,108 @@ require_once 'includes/functions.php';
                     <img src="media/classicCut.jfif" alt="Classic Haircut" class="gallery-img">
                     <div class="gallery-overlay">
                         <h4>Classic Cut</h4>
-                        <p>Timeless style</p>
+                        <p>Timeless professional style</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="media/fadeCut.jpg" alt="Modern Fade" class="gallery-img">
                     <div class="gallery-overlay">
                         <h4>Modern Fade</h4>
-                        <p>Contemporary look</p>
+                        <p>Sharp contemporary look</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="media/beardtrim.jfif" alt="Beard Trim" class="gallery-img">
                     <div class="gallery-overlay">
                         <h4>Beard Trim</h4>
-                        <p>Perfect shaping</p>
+                        <p>Perfect shaping & styling</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="media/hotShave.jfif" alt="Hot Shave" class="gallery-img">
                     <div class="gallery-overlay">
                         <h4>Hot Shave</h4>
-                        <p>Traditional service</p>
+                        <p>Traditional luxury service</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="media/completeLook.jpg" alt="Complete Look" class="gallery-img">
                     <div class="gallery-overlay">
                         <h4>Complete Look</h4>
-                        <p>Full grooming</p>
+                        <p>Full grooming experience</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="media/classicCut.jfif" alt="Professional Style" class="gallery-img">
                     <div class="gallery-overlay">
                         <h4>Professional Style</h4>
-                        <p>Business ready</p>
+                        <p>Business-ready appearance</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Customer Reviews</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description">
+                    Over 127 five-star reviews from satisfied customers
+                </p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Best barber shop in town! The fade I got was perfect and the service was outstanding. Will definitely be back!"</p>
+                    <div class="reviewer">
+                        <strong>Mike Rodriguez</strong>
+                        <span>Google Review</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Professional, clean, and friendly staff. My beard has never looked better. Highly recommend!"</p>
+                    <div class="reviewer">
+                        <strong>James Wilson</strong>
+                        <span>Facebook Review</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Walked in without an appointment and was taken care of immediately. Great cut and great price!"</p>
+                    <div class="reviewer">
+                        <strong>David Chen</strong>
+                        <span>Yelp Review</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-cta">
+                <h3>Ready to Join Our Happy Customers?</h3>
+                <button class="btn btn-primary large" onclick="openBookingModal()">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Your Appointment
+                </button>
             </div>
         </div>
     </section>
@@ -342,33 +453,35 @@ require_once 'includes/functions.php';
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Get In Touch</span>
-                <h2 class="section-title">Visit Our Shop</h2>
+                <span class="section-badge">Visit Us</span>
+                <h2 class="section-title">Come See Us Today</h2>
                 <p class="section-description">
-                    Ready for your next cut? Book an appointment or walk in during our business hours.
+                    Walk-ins welcome! Located in the heart of downtown with easy parking.
                 </p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
                             <h3>Location</h3>
                             <p>123 Main Street<br>Your City, State 12345</p>
+                            <a href="https://maps.google.com" target="_blank" class="btn btn-outline small">Get Directions</a>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Phone</h3>
+                            <h3>Call Us</h3>
                             <p><a href="tel:5551234567">(555) 123-4567</a></p>
+                            <span class="availability">Available during business hours</span>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
@@ -414,9 +527,22 @@ require_once 'includes/functions.php';
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <img src="media/ClipperLogo.png" alt="Blade & Fade Barbers" class="footer-logo-img">
-                        <span class="footer-logo-text">Blade & Fade</span>
+                        <div class="footer-logo-text">
+                            <span class="logo-main">Blade & Fade</span>
+                            <span class="logo-sub">Barbers</span>
+                        </div>
                     </div>
-                    <p>Premium men's grooming services with professional expertise and modern techniques.</p>
+                    <p>Professional men's grooming services with expert barbers and premium products.</p>
+                    <div class="footer-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9/5 (127 reviews)</span>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
@@ -425,16 +551,16 @@ require_once 'includes/functions.php';
                             <li><a href="#services">Haircuts</a></li>
                             <li><a href="#services">Beard Trim</a></li>
                             <li><a href="#services">Hot Shave</a></li>
-                            <li><a href="#services">Styling</a></li>
+                            <li><a href="#services">Fade & Design</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#gallery">Our Work</a></li>
+                            <li><a href="#reviews">Reviews</a></li>
                             <li><a href="#contact">Contact</a></li>
-                            <li><a href="#" onclick="openBookingModal()">Book Now</a></li>
+                            <li><a href="#" onclick="openBookingModal()">Book Online</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -462,6 +588,10 @@ require_once 'includes/functions.php';
                 <span class="close" onclick="closeBookingModal()">&times;</span>
             </div>
             <div class="modal-body">
+                <div class="booking-offer">
+                    <i class="fas fa-gift"></i>
+                    <span>Get 10% off your first visit when you book online!</span>
+                </div>
                 <form id="bookingForm" action="includes/booking_handler.php" method="POST">
                     <div class="form-group">
                         <input type="text" id="booking_name" name="name" required>
@@ -519,7 +649,7 @@ require_once 'includes/functions.php';
                         <textarea id="booking_notes" name="notes" rows="3"></textarea>
                         <label for="booking_notes">Special Requests (Optional)</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary large">
                         <i class="fas fa-calendar-check"></i>
                         Confirm Booking
                     </button>
@@ -529,11 +659,6 @@ require_once 'includes/functions.php';
     </div>
 
     <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
-</body>
-</html>
-    </div>
-
     <script src="assets/js/script.js"></script>
 </body>
 </html>
