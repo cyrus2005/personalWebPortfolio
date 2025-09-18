@@ -34,7 +34,7 @@ if ($_POST) {
     <meta name="description" content="Contact Trevor Hondros for professional real estate services. Get expert guidance for buying, selling, or investing in Texas real estate.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome/fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
