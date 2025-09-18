@@ -4,7 +4,7 @@
 
 // cPanel Database Configuration
 // Updated with actual cPanel database details
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'localhost'); // Try localhost first, if that fails, try your cPanel host
 define('DB_NAME', 'cyruwjtb_main'); // Your cPanel main database name
 define('DB_USER', 'cyruwjtb_admin'); // Your cPanel database username
 define('DB_PASS', 'Pjah6966!$'); // Your cPanel database password
@@ -31,30 +31,47 @@ if (getenv('DB_PASS')) {
 
 // Database connection function with fallback to main database
 function getDatabaseConnection($database = null) {
-    try {
-        // Use specified database or default to main
-        $db_name = $database ? $database : DB_NAME;
-        
-        $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . $db_name, DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        return $pdo;
-    } catch(PDOException $e) {
-        // If specific database fails, try main database
-        if ($database && $database !== DB_NAME) {
+    // Try multiple possible hosts for cPanel
+    $hosts = [
+        'localhost',
+        'cyruwjtb_admin.mysql.db.hostedresource.com',
+        'mysql.cyruwjtb_admin.db.hostedresource.com',
+        'cyruwjtb_admin.db.hostedresource.com'
+    ];
+    
+    $db_name = $database ? $database : DB_NAME;
+    
+    foreach ($hosts as $host) {
+        try {
+            $pdo = new PDO("mysql:host=" . $host . ";dbname=" . $db_name, DB_USER, DB_PASS);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            error_log("Database connection successful with host: " . $host);
+            return $pdo;
+        } catch(PDOException $e) {
+            error_log("Database connection failed with host $host: " . $e->getMessage());
+            continue;
+        }
+    }
+    
+    // If specific database fails, try main database with all hosts
+    if ($database && $database !== DB_NAME) {
+        foreach ($hosts as $host) {
             try {
-                $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
+                $pdo = new PDO("mysql:host=" . $host . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+                error_log("Database connection successful with host: " . $host . " using main database");
                 return $pdo;
-            } catch (PDOException $e2) {
-                error_log("Database connection failed for both $database and main: " . $e2->getMessage());
-                return false;
+            } catch(PDOException $e) {
+                error_log("Database connection failed with host $host and main database: " . $e->getMessage());
+                continue;
             }
         }
-        error_log("Database connection failed: " . $e->getMessage());
-        return false;
     }
+    
+    error_log("All database connection attempts failed");
+    return false;
 }
 
 // Function to create database if it doesn't exist
