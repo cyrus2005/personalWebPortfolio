@@ -31,9 +31,13 @@ if (getenv('DB_PASS')) {
 
 // Database connection function with fallback to main database
 function getDatabaseConnection($database = null) {
-    // Try multiple possible hosts for cPanel
+    // Try multiple possible hosts for cPanel shared hosting
     $hosts = [
         'localhost',
+        'mysql',
+        'mysql.localhost',
+        '198.187.29.124', // Your shared IP
+        'server39', // Your server name
         'cyruwjtb_admin.mysql.db.hostedresource.com',
         'mysql.cyruwjtb_admin.db.hostedresource.com',
         'cyruwjtb_admin.db.hostedresource.com'
