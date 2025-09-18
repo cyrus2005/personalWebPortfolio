@@ -84,13 +84,31 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual form handling)
-            setTimeout(() => {
-                showNotification('Thank you! Your message has been sent. I\'ll get back to you within 24 hours.', 'success');
-                this.reset();
+            // Actually submit the form to the server
+            fetch('includes/contact_handler.php', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification(data.message, 'success');
+                    this.reset();
+                } else {
+                    showNotification(data.message, 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('There was an error sending your message. Please try calling me directly at (270) 801-9780.', 'error');
+            })
+            .finally(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-            }, 2000);
+            });
         });
     }
     
