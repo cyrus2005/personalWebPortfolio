@@ -8,7 +8,7 @@ echo "<h1>Database Connection Debug</h1>\n";
 $host = 'localhost';
 $dbname = 'cyruwjtb_main';
 $username = 'cyruwjtb_admin';
-$password = 'Pjah6966!$';
+$password = 'P9mP6qACw9LL';
 
 echo "<h3>Testing with exact credentials:</h3>\n";
 echo "<ul>\n";

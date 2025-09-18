@@ -7,7 +7,7 @@
 define('DB_HOST', 'localhost'); // Try localhost first, if that fails, try your cPanel host
 define('DB_NAME', 'cyruwjtb_main'); // Your cPanel main database name
 define('DB_USER', 'cyruwjtb_admin'); // Your cPanel database username
-define('DB_PASS', 'Pjah6966!$'); // Your cPanel database password
+define('DB_PASS', 'P9mP6qACw9LL'); // Your cPanel database password
 
 // Individual site databases (will fallback to main if they don't exist)
 define('PORTFOLIO_DB', 'cyruwjtb_main');
