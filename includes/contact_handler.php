@@ -18,12 +18,27 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Include database configuration
-$db_config_paths = [
-    __DIR__ . '/../local-config/database.php',  // Local development first
-    __DIR__ . '/../shared-config/database.php', // Production config
-    __DIR__ . '/../../shared-config/database.php',
-    __DIR__ . '/../../../shared-config/database.php'
-];
+// Check if we're on localhost (development) or live site (production)
+$is_localhost = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false || 
+                 strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false);
+
+if ($is_localhost) {
+    // Local development - try local config first
+    $db_config_paths = [
+        __DIR__ . '/../local-config/database.php',  // Local development
+        __DIR__ . '/../shared-config/database.php', // Production config fallback
+        __DIR__ . '/../../shared-config/database.php',
+        __DIR__ . '/../../../shared-config/database.php'
+    ];
+} else {
+    // Live site - use production config first
+    $db_config_paths = [
+        __DIR__ . '/../shared-config/database.php', // Production config first
+        __DIR__ . '/../../shared-config/database.php',
+        __DIR__ . '/../../../shared-config/database.php',
+        __DIR__ . '/../local-config/database.php'   // Local config fallback
+    ];
+}
 
 $db_config_loaded = false;
 foreach ($db_config_paths as $path) {
