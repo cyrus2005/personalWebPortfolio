@@ -286,40 +286,6 @@ try {
         exit;
     }
     
-    // Rate limiting (simple implementation)
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $rateLimitFile = 'logs/rate_limit.json';
-    $rateLimitData = [];
-    
-    if (file_exists($rateLimitFile)) {
-        $rateLimitData = json_decode(file_get_contents($rateLimitFile), true) ?: [];
-    }
-    
-    $currentTime = time();
-    $timeWindow = 3600; // 1 hour
-    $maxSubmissions = 5; // Max 5 submissions per hour per IP
-    
-    if (isset($rateLimitData[$ip])) {
-        $rateLimitData[$ip] = array_filter($rateLimitData[$ip], function($timestamp) use ($currentTime, $timeWindow) {
-            return ($currentTime - $timestamp) < $timeWindow;
-        });
-        
-        if (count($rateLimitData[$ip]) >= $maxSubmissions) {
-            $response['message'] = 'Too many submissions. Please try again later.';
-            echo json_encode($response);
-            exit;
-        }
-    }
-    
-    // Add current submission to rate limit data
-    if (!isset($rateLimitData[$ip])) {
-        $rateLimitData[$ip] = [];
-    }
-    $rateLimitData[$ip][] = $currentTime;
-    
-    // Save rate limit data
-    file_put_contents($rateLimitFile, json_encode($rateLimitData), LOCK_EX);
-    
     // Save to database
     $dbResult = saveToDatabase($formData);
     if (!$dbResult['success']) {
